@@ -2,6 +2,12 @@
 
 A Retrieval-Augmented Generation (RAG) pipeline that answers questions across multiple PDF documents while maintaining conversational context.
 
+**🚀 Live demo:** https://portfolio-rag-5rfvlpav9nrdzefhhxlqxe.streamlit.app/
+
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://portfolio-rag-5rfvlpav9nrdzefhhxlqxe.streamlit.app/)
+
+> Note: the free tier sleeps after inactivity — first visit may take 30s to wake up.
+
 ## Architecture
 
 - **Document ingestion**: PDF loading + recursive chunking with LangChain
