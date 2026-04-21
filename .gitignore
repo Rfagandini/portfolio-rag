@@ -1,0 +1,6 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+build_phase4_cheatsheet.py
+phase4_portfolio_rag_cheatsheet.pdf
