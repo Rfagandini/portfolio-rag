@@ -6,6 +6,7 @@ langchain-groq==1.1.2
 langchain-huggingface==1.2.2
 langchain-qdrant==1.1.0
 langchain-text-splitters==1.1.2
+openai==2.32.0
 pypdf==6.10.2
 python-dotenv==1.2.2
 qdrant-client==1.17.1
