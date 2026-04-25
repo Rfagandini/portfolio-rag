@@ -1,801 +1,721 @@
 [
   {
     "id": 1,
-    "question": "Who are the authors of the AlexNet paper?",
-    "expected": "Alex Krizhevsky, Ilya Sutskever, and Geoffrey E. Hinton",
-    "rag_answer": "The provided context does not mention the AlexNet paper or its authors. The text appears to be a mix of different papers and references, including the Attention Is All You Need paper, but there is no mention of AlexNet.",
+    "category": "player_facts",
+    "question": "How many Grand Slam singles titles has Roger Federer won?",
+    "expected": "20 Grand Slam singles titles",
+    "rag_answer": "Roger Federer has won 20 Grand Slam singles titles.",
     "grade": "CORRECT",
     "is_follow_up": false
   },
   {
     "id": 2,
-    "question": "What university were the AlexNet authors from?",
-    "expected": "University of Toronto",
-    "rag_answer": "Unfortunately, the provided context does not mention the university of the AlexNet authors.",
+    "category": "player_facts",
+    "question": "How many Wimbledon singles titles has Roger Federer won?",
+    "expected": "8 Wimbledon titles",
+    "rag_answer": "Roger Federer has won a record eight Wimbledon singles titles.",
     "grade": "CORRECT",
     "is_follow_up": false
   },
   {
     "id": 3,
-    "question": "How many images were in the ImageNet LSVRC-2010 dataset?",
-    "expected": "1.2 million",
-    "rag_answer": "According to the provided context, the ImageNet LSVRC-2010 dataset had roughly:\n\n- 1.2 million training images\n- 50,000 validation images\n- 150,000 testing images\n\nIn total, there are approximately 1.35 million images in the ImageNet LSVRC-2010 dataset.",
+    "category": "player_facts",
+    "question": "How many French Open singles titles has Rafael Nadal won?",
+    "expected": "14 French Open titles",
+    "rag_answer": "Rafael Nadal has won a record 14 French Open men's singles titles.",
     "grade": "CORRECT",
     "is_follow_up": false
   },
   {
     "id": 4,
-    "question": "How many classes did AlexNet classify images into?",
-    "expected": "1000 classes",
-    "rag_answer": "According to the provided context, AlexNet classified images into 1000 different classes.",
+    "category": "player_facts",
+    "question": "How many total Grand Slam singles titles does Rafael Nadal have?",
+    "expected": "22 Grand Slam singles titles",
+    "rag_answer": "The provided context does not explicitly state the total number of Grand Slam singles titles Rafael Nadal has, but it does mention that he surpassed his joint-record with Djokovic and Federer for the most Grand Slam men's singles titles at the 2022 Australian Open, and that he had previously equaled Roger Federer's men's singles record of 20 Grand Slam titles. However, it also mentions that he won his 22 major titles, which can be assumed to be Grand Slam singles titles. Therefore, the answer would be 22.",
     "grade": "CORRECT",
     "is_follow_up": false
   },
   {
     "id": 5,
-    "question": "What were AlexNet's top-1 and top-5 error rates on ILSVRC-2010?",
-    "expected": "37.5% top-1 and 17.0% top-5",
-    "rag_answer": "AlexNet's top-1 and top-5 error rates on ILSVRC-2010 were 37.5% and 17.0%, respectively.",
+    "category": "player_facts",
+    "question": "How many Grand Slam singles titles has Novak Djokovic won?",
+    "expected": "24 Grand Slam singles titles (record)",
+    "rag_answer": "According to the context, Novak Djokovic has won a record 24 Grand Slam titles.",
     "grade": "CORRECT",
     "is_follow_up": false
   },
   {
     "id": 6,
-    "question": "How many parameters does the AlexNet neural network have?",
-    "expected": "60 million parameters",
-    "rag_answer": "According to the provided context, the AlexNet neural network has 60 million parameters.",
+    "category": "player_facts",
+    "question": "How many Australian Open singles titles has Novak Djokovic won?",
+    "expected": "10 Australian Open titles",
+    "rag_answer": "Novak Djokovic has won a record 10 Australian Open singles titles.",
     "grade": "CORRECT",
     "is_follow_up": false
   },
   {
     "id": 7,
-    "question": "How many neurons does AlexNet have?",
-    "expected": "650,000 neurons",
-    "rag_answer": "According to the provided context, AlexNet has 650,000 neurons.",
+    "category": "player_facts",
+    "question": "Which hand does Rafael Nadal play with?",
+    "expected": "Left-handed",
+    "rag_answer": "Rafael Nadal plays tennis left-handed.",
     "grade": "CORRECT",
     "is_follow_up": false
   },
   {
     "id": 8,
-    "question": "How many convolutional layers does AlexNet have?",
-    "expected": "Five convolutional layers",
-    "rag_answer": "According to the provided context, AlexNet has 5 convolutional layers.",
-    "grade": "CORRECT",
+    "category": "player_facts",
+    "question": "What is Roger Federer's nationality?",
+    "expected": "Swiss",
+    "rag_answer": "Roger Federer holds both Swiss and South African citizenship.",
+    "grade": "PARTIAL",
     "is_follow_up": false
   },
   {
     "id": 9,
-    "question": "How many fully-connected layers does AlexNet have?",
-    "expected": "Three fully-connected layers",
-    "rag_answer": "According to the provided context, AlexNet has three fully-connected layers.",
+    "category": "player_facts",
+    "question": "When did Roger Federer retire from professional tennis?",
+    "expected": "September 2022, at the Laver Cup",
+    "rag_answer": "Roger Federer retired from professional tennis in September 2022, following the Laver Cup.",
     "grade": "CORRECT",
     "is_follow_up": false
   },
   {
     "id": 10,
-    "question": "What activation function did AlexNet use instead of tanh?",
-    "expected": "ReLU (Rectified Linear Units)",
-    "rag_answer": "The provided context does not mention AlexNet. It mentions that Jarrett et al. [11] claim that the nonlinearity f(x) = |tanh(x)| works well with their type of contrast normalization followed by local average pooling on the Caltech-101 dataset. However, it does not mention AlexNet.",
+    "category": "player_facts",
+    "question": "What is Novak Djokovic's nationality?",
+    "expected": "Serbian",
+    "rag_answer": "Novak Djokovic is Serbian, with paternal Serbian and maternal Croatian descent.",
     "grade": "CORRECT",
     "is_follow_up": false
   },
   {
     "id": 11,
-    "question": "How much faster did ReLU networks train compared to tanh on CIFAR-10?",
-    "expected": "Six times faster",
-    "rag_answer": "According to the given context, a four-layer convolutional neural network with ReLUs (solid line) reached a 25% training error rate on CIFAR-10 six times faster than an equivalent network with tanh neurons (dashed line).",
+    "category": "player_facts",
+    "question": "At which Grand Slam did Carlos Alcaraz win his first major title?",
+    "expected": "2022 US Open",
+    "rag_answer": "The context does not explicitly state at which Grand Slam Carlos Alcaraz won his first major title. It does mention that he won his second major title at the 2023 Wimbledon Championships, but it does not specify the location of his first major title.",
     "grade": "CORRECT",
     "is_follow_up": false
   },
   {
     "id": 12,
-    "question": "How many GPUs was AlexNet trained on?",
-    "expected": "Two GPUs (NVIDIA GTX 580 3GB)",
-    "rag_answer": "According to the provided context, AlexNet was trained on 8 NVIDIA P100 GPUs.",
+    "category": "player_facts",
+    "question": "At which Grand Slam did Jannik Sinner win his first major title?",
+    "expected": "2024 Australian Open",
+    "rag_answer": "Jannik Sinner won his first major title at the 2024 Australian Open.",
     "grade": "CORRECT",
     "is_follow_up": false
   },
   {
     "id": 13,
-    "question": "How long did it take to train AlexNet?",
-    "expected": "Five to six days",
-    "rag_answer": "Unfortunately, the provided context does not mention the training time of AlexNet. The text mentions training times for other models, but not AlexNet specifically.",
+    "category": "player_facts",
+    "question": "In what year did Daniil Medvedev win the US Open?",
+    "expected": "2021",
+    "rag_answer": "Daniil Medvedev won the US Open in 2021.",
     "grade": "CORRECT",
     "is_follow_up": false
   },
   {
     "id": 14,
-    "question": "How many cycles through the training set was AlexNet trained for?",
-    "expected": "Roughly 90 cycles",
-    "rag_answer": "AlexNet was trained for roughly 90 cycles through the training set of 1.2 million images.",
+    "category": "player_facts",
+    "question": "Which Grand Slam has Alexander Zverev reached the final of?",
+    "expected": "US Open (2020) and French Open (2024)",
+    "rag_answer": "The provided context does not mention Alexander Zverev reaching the final of any Grand Slam tournament. It does mention that he lost in the quarterfinals of the 2021 Australian Open and the French Open.",
     "grade": "CORRECT",
     "is_follow_up": false
   },
   {
     "id": 15,
-    "question": "What technique did AlexNet use to reduce overfitting with image augmentation?",
-    "expected": "PCA-based color augmentation on RGB pixel values",
-    "rag_answer": "AlexNet used two distinct forms of data augmentation to reduce overfitting:\n\n1. Generating image translations and horizontal reflections by extracting random 224× 224 patches (and their horizontal reflections) from the original images.\n2. Altering the intensities of the RGB channels in training images by performing PCA on the set of RGB pixel values throughout the ImageNet training set and adding multiples of the found principal components to each training image.",
+    "category": "player_facts",
+    "question": "In what year did Stefanos Tsitsipas win the ATP Finals?",
+    "expected": "2019",
+    "rag_answer": "The context provided does not explicitly state the year Stefanos Tsitsipas won the ATP Finals, but it does mention that he won the 2019 ATP Finals. However, it also mentions that he was unable to defend his 2019 ATP Finals title, implying that he won it in 2019. Additionally, it mentions that he became the youngest winner of the year-end championship since Lleyton Hewitt in 2001, but it does not specify the year of this win.",
     "grade": "CORRECT",
-    "is_follow_up": false
-  },
-  {
-    "id": 20,
-    "question": "What is local response normalization in AlexNet?",
-    "expected": "A normalization scheme that normalizes neuron activity using adjacent kernel maps at the same spatial position",
-    "rag_answer": "Local response normalization in AlexNet is a form of lateral inhibition that creates competition for big activities amongst neuron outputs computed using different kernels. It is a scheme that aids generalization and reduces the top-1 and top-5 error rates by 1.4% and 1.2%, respectively. This scheme is also known as \"brightness normalization\" since it does not subtract the mean activity.",
-    "grade": "CORRECT",
-    "is_follow_up": false
-  },
-  {
-    "id": 21,
-    "question": "Why did AlexNet need GPUs for training?",
-    "expected": "CNNs were prohibitively expensive to apply to high-resolution images, and GPUs with optimized 2D convolution made training large CNNs feasible",
-    "rag_answer": "The provided context does not mention AlexNet. However, based on the given text, it can be inferred that the network in question needed GPUs for training due to its large size, which exceeded the memory capacity of a single GPU. The network required 1.2 million training examples, which made it too big to fit on one GPU. Therefore, it was spread across two GPUs to accommodate its size.",
-    "grade": "CORRECT",
-    "is_follow_up": false
-  },
-  {
-    "id": 22,
-    "question": "What competition did AlexNet participate in?",
-    "expected": "ILSVRC-2010 and ILSVRC-2012 (ImageNet Large Scale Visual Recognition Challenge)",
-    "rag_answer": "The competition that AlexNet participated in is the ImageNet Large-Scale Visual Recognition Challenge (ILSVRC).",
-    "grade": "CORRECT",
-    "is_follow_up": false
-  },
-  {
-    "id": 23,
-    "question": "What is the input dimensionality of AlexNet?",
-    "expected": "150,528-dimensional",
-    "rag_answer": "The provided context does not mention AlexNet. It mentions the architecture of a CNN with an input dimensionality of 150,528-dimensional, but it does not provide information about AlexNet.",
-    "grade": "PARTIAL",
-    "is_follow_up": false
-  },
-  {
-    "id": 24,
-    "question": "What dropout rate was used in AlexNet?",
-    "expected": "The paper uses dropout in the fully-connected layers to reduce overfitting",
-    "rag_answer": "The provided context does not mention the dropout rate used in AlexNet. It mentions the dropout rate used in the Transformer (big) model (Pdrop = 0.1) and the base model (Pdrop = 0.1), but there is no information about AlexNet.",
-    "grade": "CORRECT",
-    "is_follow_up": false
-  },
-  {
-    "id": 25,
-    "question": "What was the learning rate schedule used in AlexNet training?",
-    "expected": "The learning rate was reduced three times prior to termination",
-    "rag_answer": "The provided context does not mention AlexNet training. However, it does describe the learning rate schedule used in the experiment. According to the text, the learning rate schedule used the formula:\n\nlrate = d−0.5\nmodel · min(step_num−0.5, step_num · warmup_steps−1.5)\n\nThis corresponds to increasing the learning rate linearly for the first warmup_steps training steps, and decreasing it thereafter proportionally to the inverse square root of the step number. The warmup_steps was set to 4000.",
-    "grade": "CORRECT",
-    "is_follow_up": false
-  },
-  {
-    "id": 26,
-    "question": "What is the name of the model introduced in 'Attention Is All You Need'?",
-    "expected": "The Transformer",
-    "rag_answer": "The model introduced in 'Attention Is All You Need' is called the Transformer.",
-    "grade": "CORRECT",
-    "is_follow_up": false
-  },
-  {
-    "id": 27,
-    "question": "Who are the authors of the Attention Is All You Need paper?",
-    "expected": "Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Lukasz Kaiser, and Illia Polosukhin",
-    "rag_answer": "The authors of the Attention Is All You Need paper are:\n\n1. Ashish Vaswani\n2. Noam Shazeer\n3. Niki Parmar\n4. Jakob Uszkoreit\n5. Llion Jones\n6. Aidan N. Gomez",
-    "grade": "CORRECT",
-    "is_follow_up": false
-  },
-  {
-    "id": 28,
-    "question": "What organization were most of the Transformer authors from?",
-    "expected": "Google Brain and Google Research",
-    "rag_answer": "Unfortunately, the provided context does not mention the organization of the Transformer authors.",
-    "grade": "CORRECT",
-    "is_follow_up": false
-  },
-  {
-    "id": 29,
-    "question": "What type of architecture did the Transformer replace?",
-    "expected": "Recurrent neural networks (RNNs), specifically LSTM and gated recurrent networks",
-    "rag_answer": "The Transformer model architecture replaced a type of architecture that relied on recurrence.",
-    "grade": "PARTIAL",
-    "is_follow_up": false
-  },
-  {
-    "id": 30,
-    "question": "How many layers does the Transformer encoder have?",
-    "expected": "N = 6 identical layers",
-    "rag_answer": "The Transformer encoder has 6 identical layers.",
-    "grade": "CORRECT",
-    "is_follow_up": false
-  },
-  {
-    "id": 31,
-    "question": "What are the three components of the attention function?",
-    "expected": "Queries, keys, and values",
-    "rag_answer": "The three components of the attention function are:\n\n1. Query (Q)\n2. Keys (K)\n3. Values (V)\n\nThese components are used in the attention function to compute the output as described in the equation:\n\nAttention(Q, K, V) = softmax( QK^T / √dk ) * V",
-    "grade": "CORRECT",
-    "is_follow_up": false
-  },
-  {
-    "id": 32,
-    "question": "What type of attention does the Transformer use?",
-    "expected": "Scaled Dot-Product Attention",
-    "rag_answer": "The Transformer uses multi-head attention.",
-    "grade": "PARTIAL",
-    "is_follow_up": false
-  },
-  {
-    "id": 33,
-    "question": "Why is the dot product scaled in the attention mechanism?",
-    "expected": "Divided by square root of dk to prevent dot products from growing too large",
-    "rag_answer": "The dot product is scaled by 1/√dk to counteract the effect of large magnitude dot products for large values of dk, which can push the softmax function into regions where it has extremely small gradients.",
-    "grade": "CORRECT",
-    "is_follow_up": false
-  },
-  {
-    "id": 34,
-    "question": "How many attention heads does the Transformer use?",
-    "expected": "h = 8 parallel attention heads",
-    "rag_answer": "The Transformer uses 8 parallel attention layers, or heads.",
-    "grade": "CORRECT",
-    "is_follow_up": false
-  },
-  {
-    "id": 35,
-    "question": "What is multi-head attention?",
-    "expected": "Multiple attention layers running in parallel, allowing the model to attend to information from different representation subspaces at different positions",
-    "rag_answer": "Multi-head attention is a mechanism that allows the model to jointly attend to information from different representation subspaces at different positions. It is achieved by linearly projecting the queries, keys, and values multiple times with different, learned linear projections, and then performing the attention function in parallel on each of these projected versions. This results in multiple attention outputs, which are then concatenated and projected again to produce the final output. The number of parallel attention layers is a hyperparameter that can be tuned, and in this work, 8 parallel attention layers are employed.",
-    "grade": "CORRECT",
-    "is_follow_up": false
-  },
-  {
-    "id": 36,
-    "question": "What are the two sub-layers in each Transformer encoder layer?",
-    "expected": "Multi-head self-attention mechanism and a position-wise fully connected feed-forward network",
-    "rag_answer": "The two sub-layers in each Transformer encoder layer are:\n\n1. A multi-head self-attention mechanism.\n2. A simple, position-wise fully connected feed-forward network.",
-    "grade": "CORRECT",
-    "is_follow_up": false
-  },
-  {
-    "id": 37,
-    "question": "What connection type is used around each sub-layer?",
-    "expected": "Residual connections",
-    "rag_answer": "Residual connection is used around each sub-layer. This is implemented as LayerNorm(x + Sublayer(x)), where Sublayer(x) is the function implemented by the sub-layer itself.",
-    "grade": "CORRECT",
-    "is_follow_up": false
-  },
-  {
-    "id": 38,
-    "question": "Why does the Transformer need positional encoding?",
-    "expected": "Because the model contains no recurrence and no convolution, so it needs positional encoding to use information about the order of the sequence",
-    "rag_answer": "The Transformer needs positional encoding because it does not have a mechanism to inherently understand the order or position of tokens in the sequence. This is a limitation of self-attention mechanisms, which can treat all tokens equally without considering their position.\n\nTo address this issue, positional encodings are added to the input embeddings at the bottoms of the encoder and decoder stacks. The positional encodings have the same dimension as the embeddings, so that the two can be summed. This allows the model to learn dependencies between tokens based on their position in the sequence.\n\nIn this work, the authors use sine and cosine functions of different frequencies as the positional encodings. This choice of positional encodings may allow the model to extrapolate to sequence lengths longer than the ones encountered during training.",
-    "grade": "CORRECT",
-    "is_follow_up": false
-  },
-  {
-    "id": 39,
-    "question": "What is the complexity per layer of self-attention?",
-    "expected": "O(n^2 * d) where n is sequence length and d is representation dimension",
-    "rag_answer": "According to Table 1, the complexity per layer of self-attention is O(n2 · d).",
-    "grade": "CORRECT",
-    "is_follow_up": false
-  },
-  {
-    "id": 40,
-    "question": "What is the complexity per layer of recurrent layers?",
-    "expected": "O(n * d^2)",
-    "rag_answer": "According to Table 1, the complexity per layer of recurrent layers is O(n · d2).",
-    "grade": "CORRECT",
-    "is_follow_up": false
-  },
-  {
-    "id": 41,
-    "question": "What BLEU score did the Transformer achieve on English-to-German translation?",
-    "expected": "The base model achieved 25.8 BLEU, and they outperformed previous models",
-    "rag_answer": "The Transformer achieved a BLEU score of 28.4 on the WMT 2014 English-to-German translation task.",
-    "grade": "CORRECT",
-    "is_follow_up": false
-  },
-  {
-    "id": 42,
-    "question": "What was the dimension of the Transformer base model?",
-    "expected": "d_model = 512",
-    "rag_answer": "According to the provided context, the base model's dimension is listed in Table 3 as follows:\n\nN d model dff h d k dv Pdrop ϵls\ntrain PPL BLEU params\nsteps (dev) (dev) ×106\nbase 6 512 2048 8 64 64 0.1 0.1 100K 4.92 25.8 65\n\nThe dimension of the base model is 'd model = 512'.",
-    "grade": "CORRECT",
-    "is_follow_up": false
-  },
-  {
-    "id": 43,
-    "question": "What is the feed-forward dimension in the base Transformer?",
-    "expected": "d_ff = 2048",
-    "rag_answer": "According to the provided context, the base Transformer model has the following parameters:\n\nN = 6\ndmodel = 512\ndff = 2048\n\nThe feed-forward dimension (dff) in the base Transformer is 2048.",
-    "grade": "CORRECT",
-    "is_follow_up": false
-  },
-  {
-    "id": 44,
-    "question": "What dropout rate was used in the Transformer?",
-    "expected": "P_drop = 0.1",
-    "rag_answer": "The dropout rate used in the Transformer was Pdrop = 0.1 for the base model, and 0.3 was mentioned as the previous state-of-the-art model's dropout rate, but it was not used in the Transformer.",
-    "grade": "CORRECT",
-    "is_follow_up": false
-  },
-  {
-    "id": 45,
-    "question": "How many parameters does the base Transformer model have?",
-    "expected": "65 million parameters",
-    "rag_answer": "According to the given context, the base model has 65 million parameters.",
-    "grade": "CORRECT",
-    "is_follow_up": false
-  },
-  {
-    "id": 48,
-    "question": "What benchmark was used for English-to-French translation?",
-    "expected": "newstest2014",
-    "rag_answer": "The benchmark used for English-to-French translation was the WMT 2014 English-to-French translation task.",
-    "grade": "CORRECT",
-    "is_follow_up": false
-  },
-  {
-    "id": 51,
-    "question": "What advantage does self-attention have over recurrence for long sequences?",
-    "expected": "Constant maximum path length O(1) vs O(n), meaning any two positions can be connected directly regardless of distance",
-    "rag_answer": "According to the provided context, self-attention has an advantage over recurrence for long sequences because it can be restricted to considering only a neighborhood of size r in the input sequence centered around the respective output position, which would increase the maximum computational performance for tasks involving very long sequences.",
-    "grade": "PARTIAL",
-    "is_follow_up": false
-  },
-  {
-    "id": 52,
-    "question": "What is restricted self-attention?",
-    "expected": "Self-attention limited to considering only a neighborhood of size r in the input sequence, which increases path length to O(n/r)",
-    "rag_answer": "Restricted self-attention is a variant of self-attention where the model only considers a neighborhood of size r in the input sequence centered around the respective output position, rather than considering the entire sequence. This is done to improve computational performance for tasks involving very long sequences.",
-    "grade": "CORRECT",
-    "is_follow_up": false
-  },
-  {
-    "id": 53,
-    "question": "How many training steps were used for the base Transformer?",
-    "expected": "100K training steps",
-    "rag_answer": "According to the text, the base models were trained for a total of 100,000 steps.",
-    "grade": "CORRECT",
-    "is_follow_up": false
-  },
-  {
-    "id": 54,
-    "question": "What dimensions are dk and dv in the base model?",
-    "expected": "dk = 64 and dv = 64",
-    "rag_answer": "According to the provided context, in the base model, dk and dv are both equal to 64.",
-    "grade": "CORRECT",
-    "is_follow_up": false
-  },
-  {
-    "id": 55,
-    "question": "What label smoothing value was used?",
-    "expected": "epsilon_ls = 0.1",
-    "rag_answer": "The label smoothing value used was ϵls = 0.1.",
-    "grade": "CORRECT",
-    "is_follow_up": false
-  },
-  {
-    "id": 56,
-    "question": "What is the full title of the IPCC 2023 report?",
-    "expected": "Climate Change 2023 Synthesis Report, Summary for Policymakers",
-    "rag_answer": "The full title of the IPCC 2023 report is \"Climate Change 2023: Synthesis Report.\"",
-    "grade": "CORRECT",
-    "is_follow_up": false
-  },
-  {
-    "id": 57,
-    "question": "Who is the chair of the IPCC report?",
-    "expected": "Hoesung Lee",
-    "rag_answer": "Hoesung Lee is the Chairman of the IPCC.",
-    "grade": "CORRECT",
-    "is_follow_up": false
-  },
-  {
-    "id": 58,
-    "question": "What percentage of global emissions came from energy, industry, transport, and buildings combined?",
-    "expected": "The text states these sectors together accounted for emissions, with 22% from AFOLU (agriculture, forestry and other land use)",
-    "rag_answer": "According to the provided context, emissions came from the sectors of energy, industry, transport, and buildings together and 22% from agriculture, forestry and other land use (AFOLU). However, the specific percentage of global emissions from energy, industry, transport, and buildings combined is not explicitly mentioned in the provided text.\n\nHowever, we can infer that the remaining percentage of global emissions (after subtracting 22% from AFOLU) came from energy, industry, transport, and buildings. Since the total percentage of global emissions is 100%, we can calculate the percentage of emissions from energy, industry, transport, and buildings as follows:\n\n100% - 22% (AFOLU) = 78%\n\nSo, approximately 78% of global emissions came from energy, industry, transport, and buildings combined.",
-    "grade": "CORRECT",
-    "is_follow_up": false
-  },
-  {
-    "id": 59,
-    "question": "What does AFOLU stand for?",
-    "expected": "Agriculture, Forestry and Other Land Use",
-    "rag_answer": "AFOLU stands for Agriculture, Forestry, and other land use.",
-    "grade": "CORRECT",
-    "is_follow_up": false
-  },
-  {
-    "id": 60,
-    "question": "What percentage of emissions came from AFOLU?",
-    "expected": "22%",
-    "rag_answer": "According to the provided context, emissions came from the sectors of energy, industry, transport, and buildings together and 22% from agriculture, forestry and other land use (AFOLU).",
-    "grade": "CORRECT",
-    "is_follow_up": false
-  },
-  {
-    "id": 61,
-    "question": "What is the remaining carbon budget for limiting warming to 1.5 degrees?",
-    "expected": "If annual CO2 emissions between 2020-2030 stay at 2019 levels, cumulative emissions would almost exhaust the remaining carbon budget for 1.5C (50%)",
-    "rag_answer": "According to the provided context, the remaining carbon budget for limiting warming to 1.5°C is:\n\n- 500 GtCO2 for a 50% likelihood of limiting global warming to 1.5°C (best estimate).",
-    "grade": "CORRECT",
-    "is_follow_up": false
-  },
-  {
-    "id": 62,
-    "question": "What warming scenario does category C1 describe?",
-    "expected": "Limit warming to 1.5C (>50%) with no or limited overshoot",
-    "rag_answer": "Category C1 describes a warming scenario where warming is limited to 1.5°C, with no or limited overshoot.",
-    "grade": "CORRECT",
-    "is_follow_up": false
-  },
-  {
-    "id": 63,
-    "question": "What SSP scenario corresponds to category C1?",
-    "expected": "Very low (SSP1-1.9)",
-    "rag_answer": "According to the provided context, Category C1 corresponds to \"limit warming to 1.5°C (>50%) with no or limited overshoot***\". The SSP scenario corresponding to this category is \"Very low (SSP1-1.9)\".",
-    "grade": "CORRECT",
-    "is_follow_up": false
-  },
-  {
-    "id": 64,
-    "question": "What does SSP1-2.6 correspond to?",
-    "expected": "Low emissions scenario",
-    "rag_answer": "According to the provided context, SSP1-2.6 corresponds to a world with low population growth, high income, and reduced inequalities, food produced in low GHG emission systems, effective land use regulation, and high adaptive capacity (i.e., low challenges to adaptation).",
-    "grade": "CORRECT",
-    "is_follow_up": false
-  },
-  {
-    "id": 65,
-    "question": "What warming does category C3 limit to?",
-    "expected": "Limit warming to 2C (>67%)",
-    "rag_answer": "Category C3 limits warming to 2°C (>67%).",
-    "grade": "CORRECT",
-    "is_follow_up": false
-  },
-  {
-    "id": 66,
-    "question": "What risks are projected to increase in the near term for all regions?",
-    "expected": "Heat-related mortality and morbidity, food-borne, water-borne, and vector-borne diseases",
-    "rag_answer": "According to the provided context, in the near term, every region in the world is projected to face further increases in climate hazards, increasing multiple risks to ecosystems and humans. Specifically, the hazards and associated risks expected in the near term include:\n\n- An increase in heat-related human mortality\n- Climate-driven food insecurity and supply instability\n- Climate-driven loss of ecosystems and their services has cascading and long-term impacts on people globally, especially for Indigenous Peoples and local communities who are directly dependent on ecosystems to meet basic needs.\n\nThese risks are projected to increase in the near term due to global warming, interacting with non-climatic risk drivers such as competition for land between urban expansion and food production, pandemics, and conflict.",
-    "grade": "CORRECT",
-    "is_follow_up": false
-  },
-  {
-    "id": 67,
-    "question": "What does climate resilient development mean according to the IPCC?",
-    "expected": "The process of implementing greenhouse gas mitigation and adaptation measures to support sustainable development",
-    "rag_answer": "According to the provided context, climate resilient development integrates adaptation and GHG mitigation to advance sustainable development for all.",
-    "grade": "CORRECT",
-    "is_follow_up": false
-  },
-  {
-    "id": 68,
-    "question": "What does the IPCC say about the window of opportunity for climate action?",
-    "expected": "There is a rapidly narrowing window of opportunity to secure a liveable and sustainable future for all",
-    "rag_answer": "According to the provided context, the IPCC states that there is a rapidly narrowing window of opportunity to enable climate resilient development. This window of opportunity will be further limited if global warming exceeds 1.5°C and if progress towards the Sustainable Development Goals (SDGs) is inadequate.",
-    "grade": "CORRECT",
-    "is_follow_up": false
-  },
-  {
-    "id": 69,
-    "question": "What is needed to achieve climate goals regarding finance?",
-    "expected": "Both adaptation and mitigation financing would need to increase many-fold; there is sufficient global capital but barriers to redirect it to climate action",
-    "rag_answer": "According to the provided context, to achieve climate goals, both adaptation and mitigation finance would need to increase many-fold. Additionally, there are several other requirements mentioned:\n\n1. Closing the global investment gaps.\n2. Redirecting capital to climate action.\n3. Reducing barriers to climate action.\n4. Enhancing technology-related risks.\n5. Reducing sectoral and regional mismatches between available capital and investment needs.\n6. Aligning finance flows for climate action to be consistent with ambition levels and funding needs.\n7. Enhancing international cooperation on finance, technology, and capacity building.\n\nThese actions are necessary to enable greater ambition and act as a catalyst for accelerating mitigation and adaptation, and shifting development pathways towards sustainability.",
-    "grade": "PARTIAL",
-    "is_follow_up": false
-  },
-  {
-    "id": 72,
-    "question": "How can ocean ecosystems help with climate change?",
-    "expected": "Conservation and restoration of ocean ecosystems reduces vulnerability of biodiversity, reduces coastal erosion and flooding, and could increase carbon uptake if warming is limited",
-    "rag_answer": "According to the provided context, ocean ecosystems can help with climate change in the following ways:\n\n1. Reduces coastal erosion and flooding (high confidence) when targeted management is applied to adapt to unavoidable impacts of climate change.\n2. Could increase carbon uptake and storage if global warming is limited (medium confidence).\n\nAdditionally, it is mentioned that targeted management to adapt to unavoidable impacts of climate change can reduce the vulnerability of biodiversity and ecosystem services to climate change (high confidence).",
-    "grade": "CORRECT",
-    "is_follow_up": false
-  },
-  {
-    "id": 73,
-    "question": "What does rebuilding fisheries do for climate adaptation?",
-    "expected": "Reduces negative climate change impacts on fisheries and supports food security, biodiversity, human health and well-being",
-    "rag_answer": "According to the provided context, rebuilding overexploited or depleted fisheries reduces negative climate change impacts on fisheries (medium confidence).",
-    "grade": "CORRECT",
-    "is_follow_up": false
-  },
-  {
-    "id": 74,
-    "question": "What has driven increases in emissions despite efficiency improvements?",
-    "expected": "Rising global activity levels in industry, energy supply, transport, agriculture and buildings",
-    "rag_answer": "According to the provided context, emissions increases have been driven by rising global activity levels in industry, energy supply, transport, agriculture, and buildings, despite improvements in energy intensity of GDP and carbon intensity of energy. This is stated in the section \"Summary for Policymakers\" with high confidence.",
-    "grade": "CORRECT",
-    "is_follow_up": false
-  },
-  {
-    "id": 75,
-    "question": "What improvements reduced CO2 emissions from fossil fuels?",
-    "expected": "Improvements in energy intensity of GDP and carbon intensity of energy",
-    "rag_answer": "According to the provided context, the following improvements reduced CO2 emissions from fossil fuels:\n\n1. Capturing 90% or more CO2 from power plants.\n2. Capturing 50-80% of fugitive methane emissions from energy supply.\n3. Use of carbon capture and storage in the remaining fossil fuel systems.\n4. Electricity systems that emit no net CO2.\n5. Widespread electrification.\n6. Alternative energy carriers in applications less amenable to electrification.\n7. Energy conservation and efficiency.\n8. Greater integration across the energy system.\n\nAdditionally, the use of low-emissions hydrogen, biofuels, and derivatives (including ammonia and synthetic fuels) can also support mitigation of CO2 emissions from fossil fuels, but require production process improvements and cost reductions.",
-    "grade": "PARTIAL",
-    "is_follow_up": false
-  },
-  {
-    "id": 76,
-    "question": "What confidence level does the IPCC assign to near-term hazard increases?",
-    "expected": "Medium to high confidence depending on region and hazard",
-    "rag_answer": "The IPCC assigns a medium to high confidence level to near-term hazard increases.",
-    "grade": "PARTIAL",
-    "is_follow_up": false
-  },
-  {
-    "id": 77,
-    "question": "What does the IPCC say about existing fossil fuel infrastructure?",
-    "expected": "Projected CO2 emissions from existing fossil fuel infrastructure without additional abatement already exceed the remaining carbon budget for 1.5C (50%)",
-    "rag_answer": "According to the provided context, the IPCC states the following about existing fossil fuel infrastructure:\n\n1. Projected CO2 emissions from existing fossil fuel infrastructure without additional abatement would exceed the remaining carbon budget for 1.5°C (50%).\n2. Projected cumulative future CO2 emissions over the lifetime of existing and planned fossil fuel infrastructure, if historical operating patterns are maintained and without additional abatement, are approximately equal to the remaining carbon budget for limiting warming to 2°C with a likelihood of 83%.",
-    "grade": "CORRECT",
-    "is_follow_up": false
-  },
-  {
-    "id": 78,
-    "question": "What is RCP 4.5 associated with?",
-    "expected": "Intermediate emissions scenario (SSP2-4.5)",
-    "rag_answer": "According to the provided context, RCP 4.5 is associated with the following:\n\n- Category C6: limit warming to 3°C (>50%)\n- Intermediate (SSP2-4.5)",
-    "grade": "CORRECT",
-    "is_follow_up": false
-  },
-  {
-    "id": 79,
-    "question": "What warming category is associated with RCP 8.5?",
-    "expected": "Higher warming categories (C6-C7 range)",
-    "rag_answer": "According to the provided context, RCP 8.5 is associated with two warming categories:\n\n1. C6 limit warming to 3°C (>50%) Intermediate (SSP2-4.5)\n2. C6 limit warming to 3°C (>50%) Intermediate (SSP2-4.5)",
-    "grade": "PARTIAL",
-    "is_follow_up": false
-  },
-  {
-    "id": 80,
-    "question": "What year range does the carbon budget analysis focus on?",
-    "expected": "2020-2030",
-    "rag_answer": "The carbon budget analysis in the provided context focuses on the year range from 1850 to 2019.",
-    "grade": "PARTIAL",
-    "is_follow_up": false
-  },
-  {
-    "id": 81,
-    "question": "What is NASA's Artemis program?",
-    "expected": "NASA's lunar exploration program to return humans to the Moon and prepare for Mars exploration",
-    "rag_answer": "NASA's Artemis program is a mission to establish a robust human-robotic presence on and around the Moon. The program aims to build on a half-century of experience and preparation to achieve this goal. It is a globally unifying endeavor that involves coordination among the National Space Council, bipartisan support in Congress, and participation from industry and international partnerships.\n\nThe Artemis program is divided into three areas: Artemis Phase 1, Artemis Phase 2, and mission support. Artemis Phase 1 focuses on establishing a sustainable human presence on the Moon, while Artemis Phase 2 aims to expand human exploration to the lunar surface. Mission support includes the NASA capabilities, workforce, and facilities critical to the endeavor.\n\nThe program's goals include sending the first woman and next man to the Moon within five years and establishing a sustainable human presence on the lunar surface. NASA is implementing the Artemis program to achieve these goals, and the agency is working with commercial and international partners to make it a reality.",
-    "grade": "CORRECT",
-    "is_follow_up": false
-  },
-  {
-    "id": 82,
-    "question": "When was the Artemis plan published?",
-    "expected": "September 2020",
-    "rag_answer": "The provided context does not explicitly mention the publication date of the Artemis plan. However, it does mention that in 2018, with support from the highest-level national decision makers, NASA proposed a plan to return humans to the lunar surface by 2028. This suggests that the plan was proposed in 2018, but it does not provide information on when it was officially published.",
-    "grade": "CORRECT",
-    "is_follow_up": false
-  },
-  {
-    "id": 83,
-    "question": "Who wrote the foreword of the Artemis plan?",
-    "expected": "Jim Bridenstine (NASA Administrator)",
-    "rag_answer": "There is no information about who wrote the foreword of the Artemis plan in the provided context.",
-    "grade": "CORRECT",
-    "is_follow_up": false
-  },
-  {
-    "id": 84,
-    "question": "What is Artemis named after?",
-    "expected": "The twin sister of Apollo, Goddess of the Moon",
-    "rag_answer": "Artemis is named after the twin sister of Apollo, who is the Goddess of the Moon.",
-    "grade": "CORRECT",
-    "is_follow_up": false
-  },
-  {
-    "id": 85,
-    "question": "What was the deadline set for landing astronauts on the Moon?",
-    "expected": "2024, four years earlier than originally planned",
-    "rag_answer": "According to the provided context, the deadline set for landing astronauts on the Moon was 2024. This was announced by Vice President Pence on May 24, 2019, as a new challenge to NASA, four years earlier than the original planned timeline of 2028.",
-    "grade": "CORRECT",
-    "is_follow_up": false
-  },
-  {
-    "id": 86,
-    "question": "Who challenged NASA to accelerate the Moon landing timeline?",
-    "expected": "Vice President Pence",
-    "rag_answer": "The Vice President, Mike Pence, issued a new challenge to NASA to land the first woman and next man on the Moon by 2024, four years earlier than originally planned.",
-    "grade": "CORRECT",
-    "is_follow_up": false
-  },
-  {
-    "id": 87,
-    "question": "What three companies were selected for the Human Landing System?",
-    "expected": "Blue Origin, Dynetics (a Leidos company), and SpaceX",
-    "rag_answer": "According to the provided context, NASA selected three companies for the Human Landing System (HLS):\n\n1. Blue Origin of Kent, Washington\n2. Dynetics (a Leidos company) of Huntsville, Alabama\n3. SpaceX of Hawthorne, California",
-    "grade": "CORRECT",
-    "is_follow_up": false
-  },
-  {
-    "id": 88,
-    "question": "Where is Blue Origin based?",
-    "expected": "Kent, Washington",
-    "rag_answer": "Blue Origin is based in Kent, Washington.",
-    "grade": "CORRECT",
-    "is_follow_up": false
-  },
-  {
-    "id": 89,
-    "question": "Where is SpaceX based?",
-    "expected": "Hawthorne, California",
-    "rag_answer": "According to the provided context, SpaceX is based in Hawthorne, California.",
-    "grade": "CORRECT",
-    "is_follow_up": false
-  },
-  {
-    "id": 90,
-    "question": "Where is Dynetics based?",
-    "expected": "Huntsville, Alabama",
-    "rag_answer": "According to the provided context, Dynetics is based in Huntsville, Alabama.",
-    "grade": "CORRECT",
-    "is_follow_up": false
-  },
-  {
-    "id": 91,
-    "question": "What is the Gateway in the Artemis program?",
-    "expected": "A space station in lunar orbit that will establish U.S. presence in the region between Earth and the Moon",
-    "rag_answer": "The Gateway in the Artemis program is an orbiting outpost that serves as a staging point for human and robotic lunar missions. It will support longer expeditions on the Moon, potentially multiple trips to the surface during a single mission, and provide a platform for conducting science investigations. The Gateway will also demonstrate its unique orbit and operate science payloads in deep space, and it will be used as a model for future human missions to Mars.",
-    "grade": "CORRECT",
-    "is_follow_up": false
-  },
-  {
-    "id": 92,
-    "question": "What is VIPER?",
-    "expected": "Volatiles Investigating Polar Exploration Rover, managed by Ames Research Center",
-    "rag_answer": "VIPER stands for Volatiles Investigating Polar Exploration Rover. It is a NASA rover that is planned to be delivered to the Moon in 2023.",
-    "grade": "CORRECT",
-    "is_follow_up": false
-  },
-  {
-    "id": 93,
-    "question": "What does SLS stand for in the Artemis program?",
-    "expected": "Space Launch System",
-    "rag_answer": "SLS stands for Space Launch System.",
-    "grade": "CORRECT",
-    "is_follow_up": false
-  },
-  {
-    "id": 94,
-    "question": "What spacecraft carries astronauts in the Artemis program?",
-    "expected": "Orion",
-    "rag_answer": "The spacecraft that carries astronauts in the Artemis program is the Orion spacecraft.",
-    "grade": "CORRECT",
-    "is_follow_up": false
-  },
-  {
-    "id": 95,
-    "question": "How many RS-25 engines does the SLS have?",
-    "expected": "Four RS-25 liquid rocket engines",
-    "rag_answer": "According to the provided context, the SLS has 4 RS-25 liquid rocket engines.",
-    "grade": "CORRECT",
-    "is_follow_up": false
-  },
-  {
-    "id": 96,
-    "question": "What are the desired traits for lunar landing sites?",
-    "expected": "Access to significant sunlight, continuous line-of-sight to Earth, mild grading and surface debris for safe landing, and proximity to permanently shadowed regions",
-    "rag_answer": "According to the provided context, the desired traits for lunar landing sites are:\n\n1. Access to significant sunlight, which provides minimal temperature variations and potentially the only power source.\n2. Continuous line-of-sight to Earth for mission support communications.\n3. Mild grading and surface debris for safe landing and walking or roving mobility.\n4. Close proximity to permanently shadowed areas that will provide innovative investigations.",
-    "grade": "CORRECT",
-    "is_follow_up": false
-  },
-  {
-    "id": 97,
-    "question": "What is NASA's long-term goal beyond the Moon?",
-    "expected": "Human exploration of Mars",
-    "rag_answer": "According to the provided context, NASA's long-term goal beyond the Moon is to send humans to Mars. This is mentioned in the following sentences:\n\n\"Technology investments for Artemis are being targeted at technologies that would vastly reduce the cost of deep space exploration, making possible even more ambitious missions to Mars.\"\n\n\"By working side by side with commercial enterprises, we will establish a sustainable human presence on the Moon, and then use that experience to send the next giant leap for humanity – humans to Mars.\"",
-    "grade": "CORRECT",
-    "is_follow_up": false
-  },
-  {
-    "id": 98,
-    "question": "What does NASA plan regarding lunar resources?",
-    "expected": "Establish that lunar resources can be extracted and purchased from the private sector in compliance with the Outer Space Treaty",
-    "rag_answer": "Unfortunately, the provided context does not mention anything about NASA's plans regarding lunar resources. It discusses NASA's plans for sustained lunar exploration and development, including the Gateway program, the Artemis program, and the implementation strategy, but it does not mention lunar resources specifically.",
-    "grade": "CORRECT",
-    "is_follow_up": false
-  },
-  {
-    "id": 99,
-    "question": "What is the role of international partnerships in Artemis?",
-    "expected": "NASA is building a coalition of partnerships with industry, nations and academia to get to the Moon quickly and sustainably",
-    "rag_answer": "According to the provided context, international partnerships play a key role in achieving a sustainable and robust presence on the Moon while preparing to conduct a historic human mission to Mars. These partnerships will help leverage years of investment in the systems needed to return to the Moon, foster new partnerships, and spur new capabilities to ensure that humanity's return to the Moon is sustainable and extensible to the first human mission to Mars.",
-    "grade": "CORRECT",
-    "is_follow_up": false
-  },
-  {
-    "id": 100,
-    "question": "What mission comes after Artemis III?",
-    "expected": "Missions extending lunar presence and preparing for Mars, establishing infrastructure and sustained surface presence",
-    "rag_answer": "The provided context does not explicitly mention the mission that comes after Artemis III. However, it does mention \"Artemis Phase 1 and Artemis Phase 2\" as areas of the Artemis program, but does not specify the order or the missions associated with these phases.\n\nHowever, based on the general information about the Artemis program, it can be inferred that Artemis III is part of Artemis Phase 1, which is focused on establishing a sustainable presence on the lunar surface. Artemis Phase 2 is likely to be the next phase, which would involve further development and expansion of the lunar presence.\n\nUnfortunately, the provided context does not provide enough information to determine the specific mission that comes after Artemis III.",
-    "grade": "PARTIAL",
     "is_follow_up": false
   },
   {
     "id": 16,
-    "question": "What was the previous state-of-the-art top-1 error before AlexNet?",
-    "expected": "47.1% (sparse coding approach)",
-    "rag_answer": "The previous state-of-the-art top-1 error rate before AlexNet was 47.1% as mentioned in Table 1.",
+    "category": "player_facts",
+    "question": "Which surface is Casper Ruud best known for?",
+    "expected": "Clay",
+    "rag_answer": "Casper Ruud is best known for his performance on clay courts, having won 12 out of his 14 titles on this surface.",
     "grade": "CORRECT",
     "is_follow_up": false
   },
   {
     "id": 17,
-    "question": "And the top-5?",
-    "expected": "28.2%",
-    "rag_answer": "The top-5 error rate before AlexNet was 26.2% as mentioned in Table 2.",
-    "grade": "CORRECT",
-    "is_follow_up": true
-  },
-  {
-    "id": 18,
-    "question": "What size were the kernels in AlexNet's second convolutional layer?",
-    "expected": "5x5x48",
-    "rag_answer": "The kernels in AlexNet's second convolutional layer were of size 5× 5× 48.",
+    "category": "player_facts",
+    "question": "What is Taylor Fritz's nationality?",
+    "expected": "American",
+    "rag_answer": "Taylor Fritz is American.",
     "grade": "CORRECT",
     "is_follow_up": false
   },
   {
+    "id": 18,
+    "category": "player_facts",
+    "question": "In what year did Matteo Berrettini reach the Wimbledon final?",
+    "expected": "2021",
+    "rag_answer": "According to the provided context, Matteo Berrettini reached the Wimbledon final in 2021.",
+    "grade": "PARTIAL",
+    "is_follow_up": false
+  },
+  {
     "id": 19,
-    "question": "How many kernels did that layer have?",
-    "expected": "256 kernels",
-    "rag_answer": "The second convolutional layer had 256 kernels of size 5× 5× 48.",
+    "category": "player_facts",
+    "question": "How many Grand Slam singles titles did Pete Sampras win?",
+    "expected": "14 Grand Slam singles titles",
+    "rag_answer": "Pete Sampras won 14 Grand Slam singles titles.",
     "grade": "CORRECT",
-    "is_follow_up": true
+    "is_follow_up": false
+  },
+  {
+    "id": 20,
+    "category": "player_facts",
+    "question": "Which player completed the Career Grand Slam and won an Olympic gold medal (Career Golden Slam)?",
+    "expected": "Andre Agassi",
+    "rag_answer": "According to the context, the following players have completed the Career Grand Slam and won an Olympic gold medal (Career Golden Slam):\n\nIn singles:\n- Andre Agassi\n- Rafael Nadal\n- Novak Djokovic\n- Steffi Graf (women's singles)\n- Serena Williams (women's singles)\n\nNote that Rafael Nadal is the only man to complete the Career Grand Slam and win Olympic gold in both singles and doubles.",
+    "grade": "CORRECT",
+    "is_follow_up": false
+  },
+  {
+    "id": 21,
+    "category": "player_facts",
+    "question": "In what year did Marat Safin win the Australian Open?",
+    "expected": "2005",
+    "rag_answer": "Marat Safin won the Australian Open in 2005.",
+    "grade": "CORRECT",
+    "is_follow_up": false
+  },
+  {
+    "id": 22,
+    "category": "player_facts",
+    "question": "Which was Andy Roddick's only Grand Slam singles title?",
+    "expected": "2003 US Open",
+    "rag_answer": "The provided context does not explicitly state the year of Andy Roddick's only Grand Slam title, but it does mention that he won the US Open in 2003. Therefore, Andy Roddick's only Grand Slam singles title was the 2003 US Open.",
+    "grade": "CORRECT",
+    "is_follow_up": false
+  },
+  {
+    "id": 23,
+    "category": "player_facts",
+    "question": "How many French Open titles did Gustavo Kuerten win?",
+    "expected": "3 French Open titles (1997, 2000, 2001)",
+    "rag_answer": "Gustavo Kuerten won 3 French Open titles, in 1997, 2000, and 2001.",
+    "grade": "CORRECT",
+    "is_follow_up": false
+  },
+  {
+    "id": 24,
+    "category": "player_facts",
+    "question": "Which player won the calendar-year Grand Slam twice?",
+    "expected": "Rod Laver (1962 and 1969)",
+    "rag_answer": "Rod Laver remains the only male player in history to have won the calendar year Grand Slam twice, in 1962 and 1969.",
+    "grade": "CORRECT",
+    "is_follow_up": false
+  },
+  {
+    "id": 25,
+    "category": "player_facts",
+    "question": "How many Wimbledon singles titles did Björn Borg win?",
+    "expected": "5 Wimbledon titles (1976-1980)",
+    "rag_answer": "Björn Borg won 5 consecutive Wimbledon singles titles.",
+    "grade": "CORRECT",
+    "is_follow_up": false
+  },
+  {
+    "id": 26,
+    "category": "player_facts",
+    "question": "Which player held the record for most consecutive weeks as world No. 1 before Federer?",
+    "expected": "Jimmy Connors (160 consecutive weeks)",
+    "rag_answer": "The player who held the record for most consecutive weeks as world No. 1 before Federer was Jimmy Connors, with 160 consecutive weeks.",
+    "grade": "CORRECT",
+    "is_follow_up": false
+  },
+  {
+    "id": 27,
+    "category": "player_facts",
+    "question": "Which historical player was famous for his serve-and-volley style and left-handed play?",
+    "expected": "John McEnroe",
+    "rag_answer": "The historical player famous for his serve-and-volley style and left-handed play is Rod Laver.",
+    "grade": "CORRECT",
+    "is_follow_up": false
+  },
+  {
+    "id": 28,
+    "category": "player_facts",
+    "question": "How many Grand Slam singles titles has Serena Williams won?",
+    "expected": "23 Grand Slam singles titles",
+    "rag_answer": "The provided context does not give a complete total of Serena Williams' Grand Slam singles titles. It mentions that she won her eighth career Grand Slam singles title at one point and later states that she had a total of 23 Grand Slam titles, but it does not specify how many of those are singles titles.",
+    "grade": "PARTIAL",
+    "is_follow_up": false
+  },
+  {
+    "id": 29,
+    "category": "player_facts",
+    "question": "Which player won the Golden Slam (all four majors plus Olympic gold) in a single calendar year?",
+    "expected": "Steffi Graf (1988)",
+    "rag_answer": "Steffi Graf is the only singles able-bodied player to achieve the Golden Slam, winning all four majors and the Olympic gold medal in a single calendar year, which was 1988.",
+    "grade": "CORRECT",
+    "is_follow_up": false
+  },
+  {
+    "id": 30,
+    "category": "player_facts",
+    "question": "How many French Open titles has Iga Świątek won?",
+    "expected": "4 French Open titles",
+    "rag_answer": "Iga Świątek has won 4 French Open titles.",
+    "grade": "CORRECT",
+    "is_follow_up": false
+  },
+  {
+    "id": 31,
+    "category": "tournaments",
+    "question": "Who won the 2020 Australian Open men's singles?",
+    "expected": "Novak Djokovic",
+    "rag_answer": "The context does not provide the information about who won the 2020 Australian Open men's singles. It mentions the 2020 finalist, but not the winner.",
+    "grade": "CORRECT",
+    "is_follow_up": false
+  },
+  {
+    "id": 32,
+    "category": "tournaments",
+    "question": "Who won the 2020 US Open men's singles?",
+    "expected": "Dominic Thiem",
+    "rag_answer": "The provided context does not contain information about the winner of the 2020 US Open men's singles. It mentions the 2020 French Open and the 2023 US Open, but not the 2020 US Open.",
+    "grade": "CORRECT",
+    "is_follow_up": false
+  },
+  {
+    "id": 33,
+    "category": "tournaments",
+    "question": "Who won the 2021 French Open men's singles?",
+    "expected": "Novak Djokovic",
+    "rag_answer": "The context provided does not indicate the winner of the 2021 French Open men's singles. It mentions the winner of the 2021 US Open men's singles, which was Daniil Medvedev. To determine the winner of the 2021 French Open men's singles, more information is needed.",
+    "grade": "CORRECT",
+    "is_follow_up": false
+  },
+  {
+    "id": 34,
+    "category": "tournaments",
+    "question": "Who won the 2021 Wimbledon men's singles final, and who was the runner-up?",
+    "expected": "Novak Djokovic defeated Matteo Berrettini",
+    "rag_answer": "Novak Djokovic won the 2021 Wimbledon men's singles final, and Matteo Berrettini was the runner-up.",
+    "grade": "CORRECT",
+    "is_follow_up": false
+  },
+  {
+    "id": 35,
+    "category": "tournaments",
+    "question": "Who won the 2021 US Open men's singles?",
+    "expected": "Daniil Medvedev (defeated Djokovic)",
+    "rag_answer": "Daniil Medvedev won the 2021 US Open men's singles, defeating Novak Djokovic in the final with a score of 6–4, 6–4, 6–4.",
+    "grade": "CORRECT",
+    "is_follow_up": false
+  },
+  {
+    "id": 36,
+    "category": "tournaments",
+    "question": "Who won the 2022 Australian Open men's singles?",
+    "expected": "Rafael Nadal (defeated Medvedev in 5 sets)",
+    "rag_answer": "Rafael Nadal won the 2022 Australian Open men's singles.",
+    "grade": "CORRECT",
+    "is_follow_up": false
+  },
+  {
+    "id": 37,
+    "category": "tournaments",
+    "question": "Who won the 2022 Wimbledon men's singles?",
+    "expected": "Novak Djokovic",
+    "rag_answer": "Novak Djokovic won the 2022 Wimbledon men's singles, defeating Nick Kyrgios in the final. It was his seventh Wimbledon title and 21st major singles title overall.",
+    "grade": "CORRECT",
+    "is_follow_up": false
+  },
+  {
+    "id": 38,
+    "category": "tournaments",
+    "question": "Who won the 2022 US Open men's singles?",
+    "expected": "Carlos Alcaraz",
+    "rag_answer": "The context does not explicitly state who won the 2022 US Open men's singles, but it does mention that Carlos Alcaraz won the 2022 US Open.",
+    "grade": "CORRECT",
+    "is_follow_up": false
+  },
+  {
+    "id": 39,
+    "category": "tournaments",
+    "question": "Who won the 2023 Australian Open men's singles?",
+    "expected": "Novak Djokovic",
+    "rag_answer": "Novak Djokovic won the 2023 Australian Open men's singles.",
+    "grade": "CORRECT",
+    "is_follow_up": false
+  },
+  {
+    "id": 40,
+    "category": "tournaments",
+    "question": "Who won the 2023 French Open men's singles?",
+    "expected": "Novak Djokovic",
+    "rag_answer": "Novak Djokovic won the 2023 French Open men's singles, defeating Casper Ruud in the final with a score of 7–6(7–1), 6–3, 7–5.",
+    "grade": "CORRECT",
+    "is_follow_up": false
+  },
+  {
+    "id": 41,
+    "category": "tournaments",
+    "question": "Who won the 2023 Wimbledon men's singles final, and who was the runner-up?",
+    "expected": "Carlos Alcaraz defeated Novak Djokovic",
+    "rag_answer": "Carlos Alcaraz won the 2023 Wimbledon men's singles final, and Novak Djokovic was the runner-up. The final score was 1–6, 7–6(8–6), 6–1, 3–6, 6–4.",
+    "grade": "CORRECT",
+    "is_follow_up": false
+  },
+  {
+    "id": 42,
+    "category": "tournaments",
+    "question": "Who won the 2023 US Open men's singles?",
+    "expected": "Novak Djokovic",
+    "rag_answer": "Novak Djokovic won the 2023 US Open men's singles, defeating Daniil Medvedev in the final with a score of 6–3, 7–6(7–5), 6–3.",
+    "grade": "CORRECT",
+    "is_follow_up": false
+  },
+  {
+    "id": 43,
+    "category": "tournaments",
+    "question": "Who won the 2024 Australian Open men's singles?",
+    "expected": "Jannik Sinner",
+    "rag_answer": "Jannik Sinner won the 2024 Australian Open men's singles, defeating Daniil Medvedev in the final, 3–6, 3–6, 6–4, 6–4, 6–3.",
+    "grade": "CORRECT",
+    "is_follow_up": false
+  },
+  {
+    "id": 44,
+    "category": "tournaments",
+    "question": "Who won the 2024 French Open men's singles?",
+    "expected": "Carlos Alcaraz (defeated Zverev)",
+    "rag_answer": "Carlos Alcaraz won the 2024 French Open men's singles, defeating Alexander Zverev in the final.",
+    "grade": "CORRECT",
+    "is_follow_up": false
+  },
+  {
+    "id": 45,
+    "category": "tournaments",
+    "question": "Who won the 2024 Wimbledon men's singles?",
+    "expected": "Carlos Alcaraz (defeated Djokovic)",
+    "rag_answer": "Carlos Alcaraz won the 2024 Wimbledon men's singles, defeating Novak Djokovic in the final with a score of 6–2, 6–2, 7–6(7–4).",
+    "grade": "PARTIAL",
+    "is_follow_up": false
   },
   {
     "id": 46,
-    "question": "What is the maximum path length for self-attention?",
-    "expected": "O(1)",
-    "rag_answer": "According to Table 1, the maximum path length for self-attention is O(1).",
+    "category": "tournaments",
+    "question": "Who won the 2024 US Open men's singles?",
+    "expected": "Jannik Sinner",
+    "rag_answer": "Jannik Sinner won the 2024 US Open men's singles, defeating Taylor Fritz in the final with a score of 6–3, 6–4, 7–5.",
     "grade": "CORRECT",
     "is_follow_up": false
   },
   {
     "id": 47,
-    "question": "And for recurrent layers?",
-    "expected": "O(n)",
-    "rag_answer": "According to Table 1, the maximum path length for recurrent layers is O(n).",
-    "grade": "CORRECT",
-    "is_follow_up": true
+    "category": "tournaments",
+    "question": "Who won the 2022 ATP Finals?",
+    "expected": "Novak Djokovic",
+    "rag_answer": "The provided context does not mention the winner of the 2022 ATP Finals. It only discusses the performance of an American player in the tournament, who lost to Novak Djokovic in the semifinals.",
+    "grade": "PARTIAL",
+    "is_follow_up": false
+  },
+  {
+    "id": 48,
+    "category": "tournaments",
+    "question": "Who won the 2023 ATP Finals?",
+    "expected": "Novak Djokovic",
+    "rag_answer": "Djokovic won the 2023 ATP Finals.",
+    "grade": "PARTIAL",
+    "is_follow_up": false
   },
   {
     "id": 49,
-    "question": "What task besides translation was the Transformer tested on?",
-    "expected": "English constituency parsing",
-    "rag_answer": "The Transformer was tested on English constituency parsing, besides translation tasks.",
+    "category": "tournaments",
+    "question": "Who won the 2024 ATP Finals?",
+    "expected": "Jannik Sinner",
+    "rag_answer": "The provided context does not mention the winner of the 2024 ATP Finals. It only provides information about the tournament itself, such as the location, dates, and some of the players' performances during the 2024 season, but it does not specify the winner of the 2024 ATP Finals.",
     "grade": "CORRECT",
     "is_follow_up": false
   },
   {
     "id": 50,
-    "question": "How did it perform on that task?",
-    "expected": "Achieved 91.3 F1 on WSJ Section 23 with 4 layers",
-    "rag_answer": "The Transformer achieved a F1 score of 91.3 on English constituency parsing, which is comparable to the state-of-the-art results obtained by other models such as Zhu et al. (2013) [40] and Dyer et al. (2016) [8].",
-    "grade": "PARTIAL",
-    "is_follow_up": true
-  },
-  {
-    "id": 70,
-    "question": "What role does technology play according to the IPCC?",
-    "expected": "Enhancing technology innovation systems is key to accelerate the widespread adoption of technologies and practices",
-    "rag_answer": "According to the provided context, technology plays a crucial role in accelerating the widespread adoption of technologies and practices for climate action. Enhancing technology innovation systems is key to achieving this goal, as stated in the section with high confidence.",
+    "category": "tournaments",
+    "question": "In what round of the 2022 Australian Open did Nadal face Medvedev?",
+    "expected": "The final",
+    "rag_answer": "The context does not specify the round in which Nadal faced Medvedev at the 2022 Australian Open, only that Medvedev lost to Nadal in the final.",
     "grade": "CORRECT",
     "is_follow_up": false
   },
   {
+    "id": 51,
+    "category": "general",
+    "question": "What are the four Grand Slam tournaments?",
+    "expected": "Australian Open, French Open (Roland Garros), Wimbledon, US Open",
+    "rag_answer": "The four Grand Slam tournaments are:\n\n1. Australian Open\n2. French Open\n3. Wimbledon\n4. US Open",
+    "grade": "CORRECT",
+    "is_follow_up": false
+  },
+  {
+    "id": 52,
+    "category": "general",
+    "question": "What is a Career Grand Slam in tennis?",
+    "expected": "Winning all four Grand Slam tournaments at least once during a career",
+    "rag_answer": "A Career Grand Slam in tennis is the feat achieved by a tennis player when winning the four majors (Grand Slam tournaments) in either singles, doubles, or mixed doubles, at least one time each, throughout their career.",
+    "grade": "CORRECT",
+    "is_follow_up": false
+  },
+  {
+    "id": 53,
+    "category": "general",
+    "question": "How does the ATP Finals tournament format work?",
+    "expected": "Round-robin format with 8 qualified players split into two groups, followed by semifinals and final",
+    "rag_answer": "The ATP Finals tournament format works as follows: \n\n1. The eight players/teams are divided into two groups of four.\n2. Each player/team plays three round-robin matches against the others in their group.\n3. The top two performers from each group advance to the semifinals in a knock-out stage.\n4. The two winners of the semifinals play a final to determine the champion.\n\nIn terms of match format:\n- All singles matches, including the final, are best of three sets with tie-breaks in each set, including the third.\n- All doubles matches are two sets (no ad) and a Match Tie-break.\n\nThe eight seeds are determined by the ATP rankings and ATP Doubles Team Rankings on the Monday after the last ATP Tour tournament of the calendar year.",
+    "grade": "CORRECT",
+    "is_follow_up": false
+  },
+  {
+    "id": 54,
+    "category": "general",
+    "question": "What is the Davis Cup?",
+    "expected": "International men's team tennis competition",
+    "rag_answer": "The Davis Cup is the premier international team event in men's tennis, organised by the International Tennis Federation (ITF) and contested annually between teams from over 150 competing countries. It is also referred to as the \"World Cup of Tennis\" and its winners are considered the world champions.",
+    "grade": "CORRECT",
+    "is_follow_up": false
+  },
+  {
+    "id": 55,
+    "category": "general",
+    "question": "What is the Laver Cup?",
+    "expected": "Team tennis event between Team Europe and Team World, named after Rod Laver",
+    "rag_answer": "The Laver Cup is an international indoor hard court men's team tennis tournament between Team Europe and Team World. It is intended to be the Ryder Cup of the tennis world, held annually since 2017, with the location rotating between various host cities.",
+    "grade": "CORRECT",
+    "is_follow_up": false
+  },
+  {
+    "id": 56,
+    "category": "general",
+    "question": "When did the Open Era of tennis begin?",
+    "expected": "1968",
+    "rag_answer": "The Open Era of tennis began in 1968.",
+    "grade": "CORRECT",
+    "is_follow_up": false
+  },
+  {
+    "id": 57,
+    "category": "general",
+    "question": "How does scoring work in a tennis game (points)?",
+    "expected": "15, 30, 40, game (with deuce/advantage at 40-40)",
+    "rag_answer": "In a tennis game, scoring works as follows: scores from zero to three points are described as \"love\", \"15\", \"30\", and \"40\", respectively. A game is won by the first player to have won at least four points in total and at least two points more than the opponent. If the score is tied at 40-40, the game continues until one player leads by two points.",
+    "grade": "CORRECT",
+    "is_follow_up": false
+  },
+  {
+    "id": 58,
+    "category": "general",
+    "question": "What surface is Roland Garros played on?",
+    "expected": "Clay",
+    "rag_answer": "Roland Garros, also known as the French Open, is played on clay.",
+    "grade": "CORRECT",
+    "is_follow_up": false
+  },
+  {
+    "id": 59,
+    "category": "general",
+    "question": "What surface is Wimbledon played on?",
+    "expected": "Grass",
+    "rag_answer": "Wimbledon is played on grass.",
+    "grade": "CORRECT",
+    "is_follow_up": false
+  },
+  {
+    "id": 60,
+    "category": "general",
+    "question": "What are the three main tennis court surfaces?",
+    "expected": "Clay, grass, and hard court",
+    "rag_answer": "According to the context, the three main tennis court surfaces are: \n\n1. Clay courts\n2. Grass courts\n3. Hard courts",
+    "grade": "CORRECT",
+    "is_follow_up": false
+  },
+  {
+    "id": 61,
+    "category": "comparative",
+    "question": "Who has more Grand Slam singles titles: Federer or Nadal?",
+    "expected": "Nadal (22) has more than Federer (20)",
+    "rag_answer": "The provided context does not explicitly state the total number of Grand Slam singles titles won by either Federer or Nadal. It mentions that Nadal is one of four men to complete the double Career Grand Slam in singles and that he won his first major title at the 2005 French Open, but it does not provide a comprehensive list of their Grand Slam titles. Therefore, the available context is not enough to answer the question.",
+    "grade": "CORRECT",
+    "is_follow_up": false
+  },
+  {
+    "id": 62,
+    "category": "comparative",
+    "question": "Among the Big 3 (Federer, Nadal, Djokovic), who has won the most Australian Open titles?",
+    "expected": "Novak Djokovic (10)",
+    "rag_answer": "The provided context does not explicitly state the number of Australian Open titles won by each of the Big 3. However, it does mention that Nadal won his second Australian Open title, but it does not provide information about the number of Australian Open titles won by Federer and Djokovic. Therefore, the available context is not enough to determine who has won the most Australian Open titles among the Big 3.",
+    "grade": "CORRECT",
+    "is_follow_up": false
+  },
+  {
+    "id": 63,
+    "category": "comparative",
+    "question": "Who has won more Grand Slams, Pete Sampras or Roger Federer?",
+    "expected": "Federer (20) has won more than Sampras (14)",
+    "rag_answer": "According to the context, Roger Federer has won more Grand Slams than Pete Sampras. It is mentioned that Federer \"eclipsed his mark of 14 major titles\" in 2009, which means Federer has won more than 14 Grand Slams.",
+    "grade": "CORRECT",
+    "is_follow_up": false
+  },
+  {
+    "id": 64,
+    "category": "comparative",
+    "question": "Between Alcaraz and Sinner, who won a Grand Slam first?",
+    "expected": "Alcaraz (2022 US Open) won before Sinner (2024 Australian Open)",
+    "rag_answer": "The context does not provide information on who won a Grand Slam first between Alcaraz and Sinner. It mentions that Sinner defended his title at the Australian Open in 2025, implying he won it before, but it does not specify when he first won a Grand Slam. Similarly, it does not provide information on when Alcaraz first won a Grand Slam. Therefore, the available context is not enough to answer the question.",
+    "grade": "CORRECT",
+    "is_follow_up": false
+  },
+  {
+    "id": 65,
+    "category": "comparative",
+    "question": "Has Djokovic ever lost a Wimbledon final to Alcaraz?",
+    "expected": "Yes, in 2023 and 2024",
+    "rag_answer": "Yes, Djokovic has lost a Wimbledon final to Carlos Alcaraz. According to the context, this happened at the Wimbledon Championships where Alcaraz defeated Djokovic in a repeat of the 2023 final, although the score of the 2024 match is not provided, the score of the 2023 final is given as 1–6, 7–6(8–6), 6–1, 3–6, 6–4.",
+    "grade": "PARTIAL",
+    "is_follow_up": false
+  },
+  {
+    "id": 66,
+    "category": "comparative",
+    "question": "Which of the Big 3 is left-handed?",
+    "expected": "Rafael Nadal",
+    "rag_answer": "Based on the provided context, the answer is Rafael Nadal. The text states: \"As a left-handed player, one of Nadal's main strengths was his forehand, delivered with heavy topspin.\"",
+    "grade": "CORRECT",
+    "is_follow_up": false
+  },
+  {
+    "id": 67,
+    "category": "comparative",
+    "question": "Who has more Grand Slam singles titles, Serena Williams or Steffi Graf?",
+    "expected": "Serena Williams (23) has one more than Graf (22)",
+    "rag_answer": "According to the provided context, Serena Williams has 23 major women's singles titles, while Steffi Graf's exact number of Grand Slam singles titles is not explicitly stated in the given text, but it is mentioned that she has won each Grand Slam at least four times. However, it is mentioned that Graf is an 18-time Grand Slam champion in a quote from Chris Evert. \n\nSo, based on the available information, Serena Williams has more Grand Slam singles titles (23) than Steffi Graf (18).",
+    "grade": "CORRECT",
+    "is_follow_up": false
+  },
+  {
+    "id": 68,
+    "category": "comparative",
+    "question": "Which Big 3 player has won the most French Open titles?",
+    "expected": "Rafael Nadal (14)",
+    "rag_answer": "Rafael Nadal has won the most French Open titles, with a record-extending twelfth French Open title.",
+    "grade": "PARTIAL",
+    "is_follow_up": false
+  },
+  {
+    "id": 69,
+    "category": "follow_up",
+    "question": "How many Grand Slam titles has Novak Djokovic won?",
+    "expected": "24 Grand Slam singles titles",
+    "rag_answer": "Novak Djokovic has won a record 24 Grand Slam titles.",
+    "grade": "CORRECT",
+    "is_follow_up": false
+  },
+  {
+    "id": 70,
+    "category": "follow_up",
+    "question": "And how many of those were at the Australian Open?",
+    "expected": "10 Australian Open titles",
+    "rag_answer": "Novak Djokovic has won a record 10 Australian Open titles, and overall, he has won a record 24 Grand Slam titles, but as of the 2023 Australian Open, he had 22 major men's singles titles. However, according to the initial part of the context, he has won a record 24 majors.",
+    "grade": "PARTIAL",
+    "is_follow_up": true
+  },
+  {
     "id": 71,
-    "question": "What about international cooperation?",
-    "expected": "Finance, technology and international cooperation are critical enablers for accelerated climate action",
-    "rag_answer": "According to the provided context, international cooperation plays a crucial role in achieving ambitious climate change mitigation, adaptation, and climate resilient development (high confidence). It enables the mobilization and enhancement of access to finance, particularly for developing countries, vulnerable regions, and sectors. International cooperation is also key to accelerating the widespread adoption of technologies and practices, and it can act as a catalyst for accelerating mitigation and adaptation, and shifting development pathways towards sustainability (high confidence).",
+    "category": "follow_up",
+    "question": "Who won the 2022 US Open men's singles?",
+    "expected": "Carlos Alcaraz",
+    "rag_answer": "The context does not explicitly state who won the 2022 US Open men's singles, but it does mention that Carlos Alcaraz won the 2022 US Open.",
+    "grade": "CORRECT",
+    "is_follow_up": false
+  },
+  {
+    "id": 72,
+    "category": "follow_up",
+    "question": "How old was he when he won it?",
+    "expected": "19 years old",
+    "rag_answer": "The context does not provide information about the winner of the 2022 US Open men's singles. However, it mentions that Novak Djokovic won the 2023 US Open at the age of 36 years, 3 months, and 19 days. \n\nTo answer the question of who won the 2022 US Open men's singles, the context does provide the information that the 2022 US Open champion was the world No. 1, but it does not explicitly state the winner's name in the 2022 section. However, in the first section, it mentions that Novak Djokovic defeated Daniil Medvedev in the final of the 2023 US Open, but then it says \"2022: US Open champion, world No. 1\" which seems to be referring to Carlos Alcaraz, but the name is not mentioned. \n\nHowever, another section of the text is not provided, but based on the information given about the 2023 US Open and other tournaments, we can infer the winner of the 2022 US Open men's singles is Carlos Alcaraz, and according to other sources, he was 19 years old when he won the 2022 US Open men's singles title.",
+    "grade": "CORRECT",
+    "is_follow_up": true
+  },
+  {
+    "id": 73,
+    "category": "follow_up",
+    "question": "How many Wimbledon titles does Björn Borg have?",
+    "expected": "5 (1976-1980)",
+    "rag_answer": "Björn Borg has 5 consecutive Wimbledon titles.",
+    "grade": "CORRECT",
+    "is_follow_up": false
+  },
+  {
+    "id": 74,
+    "category": "follow_up",
+    "question": "Who ended his streak there?",
+    "expected": "John McEnroe (1981 Wimbledon final)",
+    "rag_answer": "Björn Borg's streak of 5 consecutive Wimbledon titles was ended by John McEnroe in 1981, although the exact year is not mentioned in the provided context, it is known from general knowledge. However, according to the context, in 1980, McEnroe reached the singles final for the first time, where he faced Björn Borg, who was seeking his fifth consecutive Wimbledon title, and McEnroe could not break Borg's serve, but the context does not explicitly state that McEnroe ended Borg's streak.",
+    "grade": "PARTIAL",
+    "is_follow_up": true
+  },
+  {
+    "id": 75,
+    "category": "follow_up",
+    "question": "Who won the 2023 Wimbledon men's final?",
+    "expected": "Carlos Alcaraz defeated Novak Djokovic",
+    "rag_answer": "Carlos Alcaraz won the 2023 Wimbledon men's final, defeating Novak Djokovic in the final with a score of 1–6, 7–6(8–6), 6–1, 3–6, 6–4.",
+    "grade": "CORRECT",
+    "is_follow_up": false
+  },
+  {
+    "id": 76,
+    "category": "follow_up",
+    "question": "How many sets did that match go?",
+    "expected": "Five sets",
+    "rag_answer": "The 2023 Wimbledon men's final between Carlos Alcaraz and Novak Djokovic went to 5 sets. The final score was 1–6, 7–6(8–6), 6–1, 3–6, 6–4.",
+    "grade": "PARTIAL",
+    "is_follow_up": true
+  },
+  {
+    "id": 77,
+    "category": "follow_up",
+    "question": "Who won the 2021 US Open men's singles?",
+    "expected": "Daniil Medvedev",
+    "rag_answer": "Daniil Medvedev won the 2021 US Open men's singles, defeating Novak Djokovic in the final with a score of 6–4, 6–4, 6–4.",
+    "grade": "CORRECT",
+    "is_follow_up": false
+  },
+  {
+    "id": 78,
+    "category": "follow_up",
+    "question": "Who did he beat in the final?",
+    "expected": "Novak Djokovic",
+    "rag_answer": "According to the context, Daniil Medvedev beat Novak Djokovic in the final of the 2021 US Open, with a score of 6–4, 6–4, 6–4.",
+    "grade": "CORRECT",
+    "is_follow_up": true
+  },
+  {
+    "id": 79,
+    "category": "follow_up",
+    "question": "How many French Open titles does Rafael Nadal have?",
+    "expected": "14",
+    "rag_answer": "Rafael Nadal has 14 French Open titles.",
+    "grade": "CORRECT",
+    "is_follow_up": false
+  },
+  {
+    "id": 80,
+    "category": "follow_up",
+    "question": "In what year did he win his first one?",
+    "expected": "2005",
+    "rag_answer": "Rafael Nadal won his first French Open title in 2005.",
     "grade": "CORRECT",
     "is_follow_up": true
   }

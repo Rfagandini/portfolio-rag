@@ -7,11 +7,13 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.runnables.history import RunnableWithMessageHistory
 from langchain_classic.chains import create_retrieval_chain, create_history_aware_retriever
 from langchain_classic.chains.combine_documents import create_stuff_documents_chain
-from langchain_community.retrievers import BM25Retriever
 from langchain_classic.retrievers import EnsembleRetriever
-from ingest import load_pdfs, get_chunks
+from langchain_classic.retrievers.contextual_compression import ContextualCompressionRetriever
+from langchain_classic.retrievers.document_compressors import CrossEncoderReranker
+from langchain_community.cross_encoders import HuggingFaceCrossEncoder
 
 
+import pickle
 import os
 
 from dotenv import load_dotenv
@@ -28,7 +30,7 @@ def get_session_history(session_id: str) -> ChatMessageHistory:
 
 def get_vector_store() -> QdrantVectorStore:
 
-    embeddings = HuggingFaceEmbeddings(model_name = "all-MiniLM-L6-v2")
+    embeddings = HuggingFaceEmbeddings(model_name = "BAAI/bge-small-en-v1.5")
     client = QdrantClient(url = os.getenv("QDRANT_URL"),
                           api_key = os.getenv("QDRANT_API_KEY"))
     
@@ -36,27 +38,41 @@ def get_vector_store() -> QdrantVectorStore:
                              embedding = embeddings,
                              collection_name = "portfolio-rag")
 
-
-def build_chain():
+def build_reranking_retriever(fetch_k = 10, top_n = 5):
     
     #RETRIEVERS
-    retriever = get_vector_store().as_retriever(search_kwargs = {"k": 5})
+    retriever = get_vector_store().as_retriever(search_kwargs = {"k": fetch_k})
     
-    docs = load_pdfs()
-    chunks = get_chunks(docs)
-    
-    bm25_retriever = BM25Retriever.from_documents(chunks, k=5)
+    with open("bm25_index.pkl", "rb") as f:
+        bm25_retriever = pickle.load(f)
     
     hybrid_retriever = EnsembleRetriever(
     retrievers=[retriever, bm25_retriever],
     weights=[0.5, 0.5]
     )
     
+    #RERANKER
+    
+    crossEncoder = HuggingFaceCrossEncoder(model_name="BAAI/bge-reranker-base")
+    
+    reranker = CrossEncoderReranker(model = crossEncoder, top_n = top_n)
+    
+    compressionRetriever = ContextualCompressionRetriever(base_retriever = hybrid_retriever, base_compressor = reranker)
+    
+    return compressionRetriever
+    
+
+
+def build_chain():
+    
+    #RETRIEVER
+    hybrid_retriever = build_reranking_retriever()
+    
     #LLM
     llm = ChatOpenAI(
     base_url='https://api.groq.com/openai/v1',
     openai_api_key=os.environ.get('GROQ_API_KEY'),
-    model='llama-3.1-8b-instant',
+    model='llama-3.3-70b-versatile',
     temperature=0.2,
     )
     

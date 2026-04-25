@@ -1,7 +1,8 @@
 """
-Evaluate the RAG pipeline against 100 test questions.
+Evaluate the RAG pipeline against 80 tennis test questions.
 Uses LLM-as-judge to auto-grade answers as CORRECT / PARTIAL / INCORRECT.
-Reports overall accuracy + breakdown by document.
+Reports overall accuracy + breakdown by category (player_facts, tournaments,
+general, comparative, follow_up).
 """
 
 import json
@@ -88,6 +89,7 @@ def evaluate_standalone(chain, grader):
 
         results.append({
             "id": q["id"],
+            "category": q["category"],
             "question": q["input"],
             "expected": q["expected"],
             "rag_answer": rag_answer,
@@ -95,8 +97,8 @@ def evaluate_standalone(chain, grader):
             "is_follow_up": False
         })
 
-        print(f"  [{i+1}/{len(standalone_qs)}] Q{q['id']}: {grade}")
-        time.sleep(1.5)  # Groq rate limit
+        print(f"  [{i+1}/{len(standalone_qs)}] Q{q['id']} ({q['category']}): {grade}")
+        time.sleep(2.5)  # Groq rate limit (70b model: ~30 RPM)
 
     return results
 
@@ -120,6 +122,7 @@ def evaluate_follow_ups(chain, grader):
         grade1 = grade_answer(grader, q1["expected"], answer1)
         results.append({
             "id": q1["id"],
+            "category": q1["category"],
             "question": q1["input"],
             "expected": q1["expected"],
             "rag_answer": answer1,
@@ -128,7 +131,7 @@ def evaluate_follow_ups(chain, grader):
         })
 
         print(f"  [Pair {i+1}/{len(follow_up_pairs)}] Q{q1['id']}: {grade1}")
-        time.sleep(1.5)
+        time.sleep(2.5)
 
         # Follow-up (same session, history should help)
         try:
@@ -140,6 +143,7 @@ def evaluate_follow_ups(chain, grader):
         grade2 = grade_answer(grader, q2["expected"], answer2)
         results.append({
             "id": q2["id"],
+            "category": q2["category"],
             "question": q2["input"],
             "expected": q2["expected"],
             "rag_answer": answer2,
@@ -148,7 +152,7 @@ def evaluate_follow_ups(chain, grader):
         })
 
         print(f"  [Pair {i+1}/{len(follow_up_pairs)}] Q{q2['id']} (follow-up): {grade2}")
-        time.sleep(1.5)
+        time.sleep(2.5)
 
     return results
 
@@ -168,24 +172,19 @@ def print_report(results):
     print(f"SCORE: {score:.1f}%")
     print("=" * 60)
 
-    # Breakdown by document
-    doc_ranges = {
-        "AlexNet": (1, 25),
-        "Attention": (26, 55),
-        "IPCC": (56, 80),
-        "NASA Artemis": (81, 100),
-    }
+    # Breakdown by category
+    categories_in_order = ["player_facts", "tournaments", "general", "comparative", "follow_up"]
 
-    print("\nBREAKDOWN BY DOCUMENT:")
-    for doc_name, (start, end) in doc_ranges.items():
-        doc_results = [r for r in results if start <= r["id"] <= end]
-        if not doc_results:
+    print("\nBREAKDOWN BY CATEGORY:")
+    for cat in categories_in_order:
+        cat_results = [r for r in results if r.get("category") == cat]
+        if not cat_results:
             continue
-        doc_correct = sum(1 for r in doc_results if r["grade"] == "CORRECT")
-        doc_partial = sum(1 for r in doc_results if r["grade"] == "PARTIAL")
-        doc_total = len(doc_results)
-        doc_score = (doc_correct + 0.5 * doc_partial) / doc_total * 100
-        print(f"  {doc_name:15s}: {doc_score:5.1f}% ({doc_correct}C / {doc_partial}P / {doc_total - doc_correct - doc_partial}I)")
+        cat_correct = sum(1 for r in cat_results if r["grade"] == "CORRECT")
+        cat_partial = sum(1 for r in cat_results if r["grade"] == "PARTIAL")
+        cat_total = len(cat_results)
+        cat_score = (cat_correct + 0.5 * cat_partial) / cat_total * 100
+        print(f"  {cat:15s}: {cat_score:5.1f}% ({cat_correct}C / {cat_partial}P / {cat_total - cat_correct - cat_partial}I, n={cat_total})")
 
     # Follow-up pair results
     follow_up_results = [r for r in results if r["is_follow_up"]]
