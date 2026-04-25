@@ -128,7 +128,11 @@ COURT_SVG = """
 
 
 # --- HEADER ---
-st.markdown(COURT_SVG, unsafe_allow_html=True)
+# st.markdown strips <svg> tags even with unsafe_allow_html=True. Use the
+# components iframe renderer (stable across all Streamlit versions) so the
+# inline SVG actually paints.
+import streamlit.components.v1 as components
+components.html(COURT_SVG, height=210)
 st.title("🎾 Tennis RAG")
 st.caption(
     "Ask anything about ATP tennis — Big 3, Grand Slams 2020–2024, current top players, history. "
