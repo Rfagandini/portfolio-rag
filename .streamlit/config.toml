@@ -1,0 +1,8 @@
+[server]
+# Disable the file watcher in production. Streamlit's watcher walks every loaded
+# module's __path__ to know what to hot-reload, which forces transformers to
+# import its hundreds of lazy-loaded image-processing submodules. Most of those
+# want torchvision, which we don't ship - producing a flood of harmless but
+# noisy ModuleNotFoundError warnings on every cold start. We don't need
+# hot-reload on a deployed app.
+fileWatcherType = "none"
