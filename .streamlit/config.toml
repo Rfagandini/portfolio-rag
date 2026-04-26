@@ -6,3 +6,12 @@
 # noisy ModuleNotFoundError warnings on every cold start. We don't need
 # hot-reload on a deployed app.
 fileWatcherType = "none"
+
+[theme]
+# Pin to a light theme. Our custom CSS paints chat surfaces near-white; without
+# this, visitors whose OS is in dark mode get Streamlit's default white text,
+# which becomes invisible on our white chat bubbles.
+base = "light"
+textColor = "#1c1c1c"
+backgroundColor = "#ffffff"
+secondaryBackgroundColor = "#f5faf5"
