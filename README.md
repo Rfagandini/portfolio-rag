@@ -1,40 +1,93 @@
-# Tennis RAG — Conversational Q&A over a Wikipedia Tennis Corpus
+# Tennis RAG: Conversational Q&A over an ATP Tennis Corpus
 
-A Retrieval-Augmented Generation pipeline that answers questions about ATP tennis (Big 3, Grand Slams 2020–2024, current top players, history) over 99 Wikipedia articles. Hybrid retrieval (dense + BM25) with a cross-encoder reranker, conversational memory, and a full evaluation harness — both retrieval-only metrics and end-to-end LLM-as-judge.
+A Retrieval-Augmented Generation pipeline that answers questions about ATP tennis from 1990 to today. It covers every player who reached the top 50 and every tour-level tournament, using hybrid retrieval (dense embeddings plus BM25, fused inside Qdrant), conversational memory, and an evaluation harness with both retrieval metrics and ground-truth question sets.
 
-**🚀 Live demo:** https://portfolio-rag-5rfvlpav9nrdzefhhxlqxe.streamlit.app/
+**Live demo:** https://portfolio-rag-5rfvlpav9nrdzefhhxlqxe.streamlit.app/
 
 [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://portfolio-rag-5rfvlpav9nrdzefhhxlqxe.streamlit.app/)
 
-> Note: the free tier sleeps after inactivity — first visit may take 30s to wake up.
+> The free tier sleeps after inactivity, so the first visit may take around 30 seconds to wake up.
+
+## Example output
+
+```
+Q: What is the head-to-head record between Roger Federer and Rafael Nadal?
+A: Rafael Nadal leads 24-16. They played 40 completed matches at tour level
+   between 2004 and 2019, and also met 1 further time that ended in a
+   walkover, which does not count towards their head-to-head record.
+
+Q: Who won the 1995 Wimbledon final and what was the score?
+A: Pete Sampras won, beating Boris Becker 6-7(5) 6-2 6-4 6-2.
+```
+
+## Where the data comes from
+
+The corpus combines two sources, because neither one is enough on its own.
+
+| Source | Supplies | Why |
+|---|---|---|
+| Wikipedia | 539 articles, including 485 player biographies | Prose about careers, playing styles, rivalries |
+| [TML-Database](https://github.com/Tennismylife/TML-Database) | 115,243 matches, 1990 to 2026 | Tournament results, scores, head-to-heads |
+
+**Why I generate tournament documents instead of scraping them.** I tried scraping Wikipedia tournament pages first and the results were unusable. The `wikipedia-api` library strips wiki tables, and tournament draws *are* tables. Measuring the extracted text made it obvious:
+
+| Page | Characters extracted |
+|---|---|
+| Pete Sampras | 37,897 |
+| 2023 Wimbledon, Men's singles | 2,392 |
+| 1995 Wimbledon, Men's singles | 1,116 |
+
+Scraping 5,000 tournament pages would have produced 5,000 near-empty stubs. Building those documents from the match CSVs instead gives complete results with every score and round.
+
+**Writing chunk-safe documents.** Chunks get split at around 800 characters and a chunk carries no memory of the document it came from. So instead of a header followed by bare rows, every generated line repeats its own context:
+
+```
+At the 1995 Wimbledon (Grass, Grand Slam), in the Final,
+Pete Sampras beat Boris Becker 6-7(5) 6-2 6-4 6-2.
+```
+
+This costs disk space and buys retrieval correctness. Without it, a chunk starting mid-document would read "in the Round of 64, X beat Y 6-4 6-3" with no year or tournament, which is unretrievable.
 
 ## Architecture
 
-- **Corpus**: 99 ATP / tennis Wikipedia articles fetched via `fetch_corpus.py` (players, Grand Slams 2020–2024, history)
-- **Chunking**: Recursive character splitter via LangChain
-- **Embeddings**: `BAAI/bge-small-en-v1.5` (local sentence-transformers)
-- **Vector store**: Qdrant Cloud
-- **Hybrid retrieval**: `EnsembleRetriever` combining dense vector search with BM25 (50/50 weights)
-- **Reranker**: `BAAI/bge-reranker-base` cross-encoder via `ContextualCompressionRetriever` — fetch 20 candidates, rerank to top 20 chunks
-- **LLM**: Llama 3.3 70B Versatile via Groq (free tier)
-- **Conversational memory**: `create_history_aware_retriever` reformulates follow-ups into standalone queries before retrieval
-- **Evaluation**: retrieval-only (Hit@k / MRR@k / Recall@k) + end-to-end LLM-as-judge with a separate grader model (Llama 3.1 8B) to avoid self-bias
-- **Tracing**: LangSmith integration
+- **Corpus:** 10,260 documents and 54,488 chunks. 539 Wikipedia articles, 5,357 tournament-edition results, 485 career summaries, 3,880 head-to-head documents.
+- **Chunking:** recursive character splitter, tuned per document type. Wikipedia prose at 500/100, generated match documents at 800 with newline separators so match lines survive whole.
+- **Embeddings:** `BAAI/bge-small-en-v1.5` run locally through sentence-transformers.
+- **Vector store:** Qdrant Cloud, storing a dense and a sparse vector per chunk.
+- **Hybrid retrieval:** Qdrant fuses dense and sparse results server-side with Reciprocal Rank Fusion (`RetrievalMode.HYBRID`).
+- **Reranker:** `BAAI/bge-reranker-base` cross-encoder, available but see the evaluation section below for why I would not use it on lookup queries.
+- **LLM:** Llama 3.3 70B Versatile through Groq (free tier).
+- **Conversational memory:** `create_history_aware_retriever` rewrites follow-ups into standalone queries before retrieval.
+- **Tracing:** LangSmith.
 
-## Project Structure
+### Why BM25 moved into Qdrant
+
+The earlier version pickled a `BM25Retriever` to disk and combined it with the dense retriever using an `EnsembleRetriever`. That worked at 98 documents. It does not scale.
+
+The pickle was 8.7 MB for 9,179 chunks, which is 948 bytes per chunk. At 54,488 chunks it would be roughly 50 MB, rewritten on every ingest, committed to git, and cloned by Streamlit Cloud on every boot.
+
+Qdrant can store a sparse BM25 vector next to the dense one and fuse them itself. The retrieval idea is the same, but there is no pickle, no large file in git, and no BM25 index sitting in the app's memory. As a side effect `rag_chain.py` got smaller.
+
+One thing worth knowing if you build this: the dense vector is named `""` in both DENSE and HYBRID mode, so reading a hybrid collection without passing `retrieval_mode=HYBRID` does **not** raise an error. It silently ignores the sparse vectors and returns dense-only results. The evaluation below shows exactly how much that costs.
+
+## Project structure
 
 ```
 portfolio-rag/
-├── docs/                    # Wikipedia .txt articles (one per topic)
-├── fetch_corpus.py          # Pull tennis articles from Wikipedia
-├── ingest.py                # Chunk, embed, push to Qdrant + build BM25 index
-├── bm25_index.pkl           # Persisted BM25 retriever
-├── rag_chain.py             # Hybrid + reranking retriever, conversational chain
-├── streamlit_app.py         # Tennis-themed chat UI
-├── test_questions.py        # 80 evaluation questions across 5 categories
-├── evaluate.py              # End-to-end LLM-as-judge eval
+├── docs/                    # Corpus: Wikipedia articles + generated match docs
+├── data/                    # Raw match CSVs + derived player list (gitignored)
+├── fetch_match_data.py      # Download ATP match CSVs 1990-2026
+├── build_player_list.py     # Derive the 485 top-50 players from match data
+├── fetch_corpus.py          # Pull player biographies from Wikipedia
+├── generate_match_docs.py   # Turn match data into results/career/h2h docs
+├── ingest.py                # Chunk, embed (dense + sparse), push to Qdrant
+├── rag_chain.py             # Retriever + conversational chain
+├── build_eval_questions.py  # Derive 150 ground-truth questions from match data
+├── evaluate_generated.py    # Ablation: dense vs hybrid vs reranked
 ├── evaluate_retrieval.py    # Retrieval-only eval (Hit/MRR/Recall@k)
-├── eval_results.json        # Raw end-to-end results
+├── evaluate.py              # End-to-end LLM-as-judge eval
+├── test_questions.py        # 80 hand-written evaluation questions
+├── streamlit_app.py         # Tennis-themed chat UI
 ├── .env.example
 ├── requirements.txt
 └── README.md
@@ -42,7 +95,7 @@ portfolio-rag/
 
 ## Setup
 
-1. **Clone and install dependencies**
+1. **Clone and install**
 ```bash
 git clone https://github.com/Rfagandini/portfolio-rag.git
 cd portfolio-rag
@@ -63,110 +116,101 @@ cp .env.example .env
 | `QDRANT_API_KEY` | Qdrant Cloud dashboard |
 | `LANGCHAIN_API_KEY` | [LangSmith](https://smith.langchain.com) (optional) |
 
-3. **Fetch the corpus** (one-off — pulls 99 Wikipedia articles into `docs/`)
+3. **Build the corpus.** Each step is idempotent, so it is safe to re-run after a failure.
 ```bash
-python fetch_corpus.py
+python fetch_match_data.py     # ~24 MB of match CSVs into data/matches/
+python build_player_list.py    # derives the 485 top-50 players
+python fetch_corpus.py         # Wikipedia biographies into docs/
+python generate_match_docs.py  # results / career / h2h docs into docs/
 ```
 
-4. **Run ingestion** (chunks, embeds, uploads to Qdrant, builds BM25 index)
+4. **Ingest**
 ```bash
 python ingest.py
 ```
+> This takes around 75 minutes on CPU. Every chunk is embedded twice, dense and sparse, and uploaded in batches.
 
-5. **Query the RAG**
+5. **Run it**
+```bash
+python rag_chain.py             # CLI
+streamlit run streamlit_app.py  # UI
+```
 
-   CLI:
-   ```bash
-   python rag_chain.py
-   ```
+6. **Evaluate**
+```bash
+python build_eval_questions.py  # regenerate the ground-truth question set
+python evaluate_generated.py    # dense vs hybrid vs reranked
+python evaluate_retrieval.py    # original 80 questions
+```
 
-   Streamlit UI:
-   ```bash
-   streamlit run streamlit_app.py
-   ```
+## Data sources and licensing
 
-6. **Run evaluations**
-   ```bash
-   python evaluate_retrieval.py   # retrieval-only, no LLM cost
-   python evaluate.py             # end-to-end with LLM-as-judge
-   ```
+- **Wikipedia** text is under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+- **[TML-Database](https://github.com/Tennismylife/TML-Database)** by Tennismylife is under **CC BY-NC-SA 4.0**. Attribution is required and use must be non-commercial. This project is a non-commercial portfolio piece.
 
-## Retrieval Evaluation
+> The `JeffSackmann/tennis_atp` repository that this data ecosystem grew out of is no longer available on GitHub. TML-Database uses the same column format and is actively maintained.
 
-Measured on 80 questions across 5 categories. The retrieval eval is decoupled from the LLM — it asks "did we surface the right articles?", independent of generation quality.
+## Evaluation
 
-**Baseline — hybrid only (dense + BM25, no reranker)**
+### Did scaling the corpus 105x hurt retrieval?
 
-| k  | Hit@k | MRR@k | Recall@k |
-|----|-------|-------|----------|
-| 1  | 0.512 | 0.512 | 0.323    |
-| 3  | 0.788 | 0.625 | 0.554    |
-| 5  | 0.875 | 0.656 | 0.762    |
-| 10 | 0.925 | 0.668 | 0.844    |
+The expansion deliberately left all 98 original documents and all 80 original questions untouched, so re-running the same eval isolates one variable: what a much larger corpus does to retrieval on identical queries.
 
-**Reranked — hybrid + `BAAI/bge-reranker-base` cross-encoder**
+**Reranked retrieval, same 80 questions, 98 documents vs 10,260 documents:**
 
-| k  | Hit@k | MRR@k | Recall@k | Δ MRR@k vs baseline |
-|----|-------|-------|----------|---------------------|
-| 1  | 0.575 | 0.575 | 0.479    | +0.063              |
-| 3  | 0.812 | 0.667 | 0.679    | +0.042              |
-| 5  | 0.850 | 0.682 | 0.765    | +0.026              |
-| 10 | 0.875 | 0.689 | 0.798    | +0.021              |
+| k | Hit@k | MRR@k | Recall@k |
+|---|---|---|---|
+| 1 | 0.575 → 0.550 | 0.575 → 0.550 | 0.479 → 0.460 |
+| 3 | 0.812 → 0.812 | 0.667 → 0.679 | 0.679 → 0.679 |
+| 5 | 0.850 → 0.875 | 0.682 → **0.692** | 0.765 → 0.748 |
+| 10 | 0.875 → **0.900** | 0.689 → **0.695** | 0.798 → **0.810** |
 
-Headline: **Recall@1 jumps from 0.32 → 0.48 (+48% relative)** — the reranker is much better at putting the *correct* article in the very top slot, which is exactly what matters when the LLM only stuffs the top-k chunks into the prompt.
+Essentially no cost. Every movement is within about 0.025 in either direction, which is noise on an 80-question set, and half of them are improvements. I expected a clear drop, so this surprised me. My reading is that the added documents are relevant rather than random noise, so they do not act as distractors the way I assumed they would.
 
-### Where the cross-encoder helped — and where it hurt
+### Ground-truth evaluation on the expanded corpus
 
-Per-category MRR@5, baseline → reranked:
+The 80 hand-written questions only cover the original corpus, so they cannot test the 9,722 generated documents. Rather than hand-label another 150 questions or ask an LLM to invent them, `build_eval_questions.py` derives them straight from the match CSVs. That means the gold answers are exact ground truth and the expected document is known by construction.
 
-| Category      | Baseline | Reranked | Δ        |
-|---------------|----------|----------|----------|
-| player_facts  | 0.575    | 0.850    | **+0.275** |
-| general       | 0.467    | 0.603    | **+0.136** |
-| comparative   | 0.708    | 0.708    | ±0.000   |
-| follow_up     | 0.708    | 0.667    | −0.042   |
-| tournaments   | **0.925**| 0.573    | **−0.352** |
+The set is 150 questions, 30 each of: tournament winner, final scoreline, head-to-head, career titles, career best ranking.
 
-**Why `player_facts` and `general` improved.** These are paraphrased, semantic queries — "How many Grand Slams has Federer won?" must match a chunk discussing his "20 majors". A bi-encoder embedding can put that chunk at rank 4–5; a cross-encoder reads the query and the candidate chunk *together* and resolves the lexical gap. This is exactly the failure mode cross-encoders are designed for.
+| k | Dense only | Hybrid | Hybrid + reranker |
+|---|---|---|---|
+| Hit@1 | 0.780 | **0.853** | 0.687 |
+| Hit@5 | 0.927 | 0.980 | **1.000** |
+| Hit@10 | 0.933 | **1.000** | **1.000** |
+| MRR@10 | 0.848 | **0.912** | 0.828 |
+| Recall@10 | 0.933 | **1.000** | **1.000** |
 
-**Why `tournaments` regressed badly.** Tournament queries are dominated by exact strings: *"Who won the 2022 Australian Open men's singles?"* maps almost perfectly onto the article titled `2022_Australian_Open_–_Men's_singles`. BM25 already nails this — MRR was 0.925 without any reranking. The cross-encoder (trained on MS-MARCO-style passage relevance) doesn't understand the structural pattern "year + tournament + draw" the way a sparse keyword retriever does, so it shuffles a near-perfect ranking and loses ground.
+**Finding 1: hybrid retrieval is worth 7.3 points of Hit@1 over dense-only, and the gain sits almost entirely in one category.**
 
-**Why `follow_up` dipped slightly.** Follow-ups get rewritten into standalone queries by the history-aware retriever, but the rewrites are short and decontextualized ("how many sets did that match go?"). Cross-encoders rely on semantic richness; they're under-fed here.
+| Category | Dense Hit@5 | Hybrid Hit@5 |
+|---|---|---|
+| `career_rank` | 0.667 | **0.933** |
+| `career_titles` | 0.967 | 0.967 |
+| `head_to_head` | 1.000 | 1.000 |
+| `tournament_score` | 1.000 | 1.000 |
+| `tournament_winner` | 1.000 | 1.000 |
 
-**Meta-observation: ensemble weights stop mattering with a strong reranker downstream.** I experimented with shifting hybrid weights toward BM25 (0.3 / 0.7) hoping to rescue the tournament regression. It didn't help — the reranker re-orders whatever pool it gets. As long as the candidate pool covers the right document, the upstream blend has minimal effect. The lever that *does* matter is `fetch_k`: too low and you starve the reranker, too high and you dilute it.
+`career_rank` is the category whose answers depend on exact tokens, a player name plus a specific rank number, which is what BM25 is good at and embeddings are not. The other categories are semantically distinctive enough that dense retrieval already handles them. This is also the concrete cost of the silent-failure mode mentioned earlier: forgetting `retrieval_mode=HYBRID` would not error, it would just quietly hand back the left column.
 
-The **net trade-off** (+27pp player_facts, +14pp general, −35pp tournaments) is favorable on this corpus because tournaments still scored highly enough end-to-end (see below) and the LLM tolerates rank drift better than it tolerates the wrong article entirely.
+**Finding 2: the cross-encoder reranker hurts these queries.** It guarantees the right document lands in the top 5 (Hit@5 of 1.000), but it drops Hit@1 from 0.853 to 0.687 and MRR from 0.912 to 0.828. `career_titles` MRR@5 falls from 0.894 to 0.547.
 
-## End-to-End Evaluation
+This matches what I saw in the earlier version at smaller scale: the reranker helps paraphrased, semantic questions and hurts exact-match lookups. The generated corpus is overwhelmingly lookups, so on this traffic hybrid retrieval on its own beats hybrid plus reranker. The reranker still earns its place on paraphrased player questions, where `player_facts` MRR@5 reached 0.867.
 
-80 questions, graded CORRECT / PARTIAL / INCORRECT by Llama 3.1 8B (a *different* model from the answer LLM, to avoid self-evaluation bias). Score = (CORRECT + 0.5 · PARTIAL) / total.
+### Data quality issues I found
 
-| Category       | Score  | Breakdown               | n  |
-|----------------|--------|-------------------------|----|
-| general        | 100.0% | 8 C / 0 P / 0 I         | 8  |
-| player_facts   | 95.0%  | 18 C / 2 P / 0 I        | 20 |
-| tournaments    | 92.5%  | 17 C / 3 P / 0 I        | 20 |
-| comparative    | 87.5%  | 12 C / 4 P / 0 I        | 16 |
-| follow_up      | 87.5%  | 14 C / 2 P / 0 I        | 16 |
-| **Overall**    | **93.1%** | **69 C / 11 P / 0 I** | 80 |
+Spot-checking generated documents against published records caught three problems. All three would have made the system state wrong facts confidently, and none of them were visible from retrieval metrics alone.
 
-Follow-up second-question accuracy (history-aware): **3/6 CORRECT**, 3/6 PARTIAL — the system never *fails* a follow-up, it just sometimes pulls in extra context.
+| Issue | Cause | Before | After |
+|---|---|---|---|
+| Head-to-heads inflated | Walkovers counted as wins. 542 in the dataset. | Federer vs Nadal 24-17 | **24-16**, matching the ATP |
+| Title counts inflated | Team events (World Team Cup, Davis Cup) counted as singles titles | Sampras 65 titles | **64**, matching the ATP |
+| Career stats misleading | Data starts in 1990, so players who peaked earlier looked worse | Wilander "best rank 10" | Window now stated explicitly |
 
-**Zero incorrect answers across all 80 questions.** Every "miss" is a partial — usually a verbose or hedged answer rather than a wrong one.
+Walkovers are still listed in the documents, but phrased as "advanced when X withdrew" rather than "beat", and excluded from win/loss records. The third fix is in the code and applies on the next ingest.
 
-### Failure analysis — what makes an answer "PARTIAL"?
+The lesson I took from this: when you generate a corpus from structured data, the generation code can be correct and the output still wrong, because the source encodes things differently than you assume. Checking a handful of outputs against known facts found all three in about ten minutes.
 
-I went through all 11 PARTIAL cases. They cluster into six patterns, none of which are wrong-fact errors:
+## Tech stack
 
-1. **Hedging language penalized by the grader.** Q18 asked when Berrettini reached the Wimbledon final; the LLM said "According to the provided context, ... in 2021" — factually correct, but the grader docks the "according to" hedge. Q74 and Q76 are the same shape.
-2. **Over-verbose answers.** Q70 asked how many Australian Opens Djokovic won. The LLM gave the right answer (10) but also dumped his total Slam count and a 2023 figure — the grader saw the noise and downgraded.
-3. **Outdated facts in the source article.** Q68 asked which Big 3 has the most French Opens — the LLM answered Nadal, **12 titles**, because the chunk it grounded on was an older Wikipedia revision. The current correct answer is 14. The retriever surfaced a stale chunk; the LLM answered it faithfully.
-4. **Multiple-attribute confusion.** Q8 ("Federer's nationality") returned "Swiss and South African citizenship" — technically true, but the expected answer is "Swiss". Q28 ("Serena's Slam *singles* total") got tangled because the source talks about both her career singles count and her total titles.
-5. **Implicit vs explicit dates.** Q65 asked if Djokovic ever lost a Wimbledon final to Alcaraz; the LLM gave the 2023 final score in detail but called the 2024 final a "repeat" without restating the date. Grader read "missing year" and marked PARTIAL.
-6. **Strict grader on partial-name match.** Q48: expected "Novak Djokovic", LLM said "Djokovic". The 8B grader is strict.
-
-**Bottom line on the partials:** the system's *factual* accuracy is higher than 93.1%. Grader strictness on hedging, verbosity, and partial names is responsible for at least half the partial scores. The ones that point to a real weakness are #3 (stale source) and #4 (multi-attribute ambiguity) — both fixable by re-fetching the corpus and adding output-shaping examples to the answer prompt.
-
-## Tech Stack
-
-Python · LangChain (langchain-classic 1.0) · Qdrant Cloud · Groq (Llama 3.3 70B + Llama 3.1 8B grader) · BAAI/bge-small-en-v1.5 embeddings · BAAI/bge-reranker-base cross-encoder · BM25 · Streamlit · LangSmith
+Python, LangChain (langchain-classic 1.0), Qdrant Cloud with hybrid dense and sparse vectors, Groq (Llama 3.3 70B), BAAI/bge-small-en-v1.5 embeddings, BAAI/bge-reranker-base cross-encoder, FastEmbed BM25, Streamlit, LangSmith.

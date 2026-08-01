@@ -1,6 +1,21 @@
 .env
 .venv/
+.venv-phase5/
 __pycache__/
 *.pyc
 build_phase4_cheatsheet.py
 phase4_portfolio_rag_cheatsheet.pdf
+
+# Raw match CSVs (~24 MB) — reproducible via `python fetch_match_data.py`
+data/
+
+# Replaced by Qdrant-native sparse vectors; no longer built or read.
+bm25_index.pkl
+
+# Generated corpus (~24 MB, rewritten on every run). Deterministically
+# rebuilt by `python fetch_match_data.py && python generate_match_docs.py`,
+# so committing it would only bloat history. The Wikipedia-fetched player
+# biographies in docs/ ARE tracked.
+docs/results__*.txt
+docs/career__*.txt
+docs/h2h__*.txt

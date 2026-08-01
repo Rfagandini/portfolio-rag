@@ -1,0 +1,1352 @@
+[
+  {
+    "id": 1,
+    "category": "tournament_winner",
+    "input": "Who won the 2009 Munich?",
+    "expected": "Tomas Berdych",
+    "articles": [
+      "results__2009_Munich"
+    ]
+  },
+  {
+    "id": 2,
+    "category": "tournament_winner",
+    "input": "Who won the 2005 Los Angeles?",
+    "expected": "Andre Agassi",
+    "articles": [
+      "results__2005_Los_Angeles"
+    ]
+  },
+  {
+    "id": 3,
+    "category": "tournament_winner",
+    "input": "Who won the 2000 Canada Masters?",
+    "expected": "Marat Safin",
+    "articles": [
+      "results__2000_Canada_Masters"
+    ]
+  },
+  {
+    "id": 4,
+    "category": "tournament_winner",
+    "input": "Who won the 1999 Basel?",
+    "expected": "Karol Kucera",
+    "articles": [
+      "results__1999_Basel"
+    ]
+  },
+  {
+    "id": 5,
+    "category": "tournament_winner",
+    "input": "Who won the 2011 Santiago?",
+    "expected": "Tommy Robredo",
+    "articles": [
+      "results__2011_Santiago"
+    ]
+  },
+  {
+    "id": 6,
+    "category": "tournament_winner",
+    "input": "Who won the 1995 Bucharest?",
+    "expected": "Thomas Muster",
+    "articles": [
+      "results__1995_Bucharest"
+    ]
+  },
+  {
+    "id": 7,
+    "category": "tournament_winner",
+    "input": "Who won the 1992 Maceio?",
+    "expected": "Tomas Carbonell",
+    "articles": [
+      "results__1992_Maceio"
+    ]
+  },
+  {
+    "id": 8,
+    "category": "tournament_winner",
+    "input": "Who won the 1996 Bastad?",
+    "expected": "Magnus Gustafsson",
+    "articles": [
+      "results__1996_Bastad"
+    ]
+  },
+  {
+    "id": 9,
+    "category": "tournament_winner",
+    "input": "Who won the 2023 Vienna?",
+    "expected": "Jannik Sinner",
+    "articles": [
+      "results__2023_Vienna"
+    ]
+  },
+  {
+    "id": 10,
+    "category": "tournament_winner",
+    "input": "Who won the 2012 Montpellier?",
+    "expected": "Tomas Berdych",
+    "articles": [
+      "results__2012_Montpellier"
+    ]
+  },
+  {
+    "id": 11,
+    "category": "tournament_winner",
+    "input": "Who won the 2015 Vienna?",
+    "expected": "David Ferrer",
+    "articles": [
+      "results__2015_Vienna"
+    ]
+  },
+  {
+    "id": 12,
+    "category": "tournament_winner",
+    "input": "Who won the 2012 Canada Masters?",
+    "expected": "Novak Djokovic",
+    "articles": [
+      "results__2012_Canada_Masters"
+    ]
+  },
+  {
+    "id": 13,
+    "category": "tournament_winner",
+    "input": "Who won the 1990 Berlin?",
+    "expected": "Ronald Agenor",
+    "articles": [
+      "results__1990_Berlin"
+    ]
+  },
+  {
+    "id": 14,
+    "category": "tournament_winner",
+    "input": "Who won the 2010 Metz?",
+    "expected": "Gilles Simon",
+    "articles": [
+      "results__2010_Metz"
+    ]
+  },
+  {
+    "id": 15,
+    "category": "tournament_winner",
+    "input": "Who won the 2006 Mumbai?",
+    "expected": "Dmitry Tursunov",
+    "articles": [
+      "results__2006_Mumbai"
+    ]
+  },
+  {
+    "id": 16,
+    "category": "tournament_winner",
+    "input": "Who won the 2002 Milan?",
+    "expected": "Davide Sanguinetti",
+    "articles": [
+      "results__2002_Milan"
+    ]
+  },
+  {
+    "id": 17,
+    "category": "tournament_winner",
+    "input": "Who won the 1993 Milan?",
+    "expected": "Boris Becker",
+    "articles": [
+      "results__1993_Milan"
+    ]
+  },
+  {
+    "id": 18,
+    "category": "tournament_winner",
+    "input": "Who won the 2011 Hamburg?",
+    "expected": "Gilles Simon",
+    "articles": [
+      "results__2011_Hamburg"
+    ]
+  },
+  {
+    "id": 19,
+    "category": "tournament_winner",
+    "input": "Who won the 2011 Buenos Aires?",
+    "expected": "Nicolas Almagro",
+    "articles": [
+      "results__2011_Buenos_Aires"
+    ]
+  },
+  {
+    "id": 20,
+    "category": "tournament_winner",
+    "input": "Who won the 2010 Delray Beach?",
+    "expected": "Ernests Gulbis",
+    "articles": [
+      "results__2010_Delray_Beach"
+    ]
+  },
+  {
+    "id": 21,
+    "category": "tournament_winner",
+    "input": "Who won the 2022 Astana?",
+    "expected": "Novak Djokovic",
+    "articles": [
+      "results__2022_Astana"
+    ]
+  },
+  {
+    "id": 22,
+    "category": "tournament_winner",
+    "input": "Who won the 1995 Paris Masters?",
+    "expected": "Pete Sampras",
+    "articles": [
+      "results__1995_Paris_Masters"
+    ]
+  },
+  {
+    "id": 23,
+    "category": "tournament_winner",
+    "input": "Who won the 2022 Wimbledon?",
+    "expected": "Novak Djokovic",
+    "articles": [
+      "results__2022_Wimbledon"
+    ]
+  },
+  {
+    "id": 24,
+    "category": "tournament_winner",
+    "input": "Who won the 1995 Buenos Aires?",
+    "expected": "Carlos Moya",
+    "articles": [
+      "results__1995_Buenos_Aires"
+    ]
+  },
+  {
+    "id": 25,
+    "category": "tournament_winner",
+    "input": "Who won the 1991 Rome Masters?",
+    "expected": "Emilio Sanchez",
+    "articles": [
+      "results__1991_Rome_Masters"
+    ]
+  },
+  {
+    "id": 26,
+    "category": "tournament_winner",
+    "input": "Who won the 1991 US Open?",
+    "expected": "Stefan Edberg",
+    "articles": [
+      "results__1991_US_Open"
+    ]
+  },
+  {
+    "id": 27,
+    "category": "tournament_winner",
+    "input": "Who won the 2024 Auckland?",
+    "expected": "Alejandro Tabilo",
+    "articles": [
+      "results__2024_Auckland"
+    ]
+  },
+  {
+    "id": 28,
+    "category": "tournament_winner",
+    "input": "Who won the 2023 Chengdu?",
+    "expected": "Alexander Zverev",
+    "articles": [
+      "results__2023_Chengdu"
+    ]
+  },
+  {
+    "id": 29,
+    "category": "tournament_winner",
+    "input": "Who won the 2016 Indian Wells Masters?",
+    "expected": "Novak Djokovic",
+    "articles": [
+      "results__2016_Indian_Wells_Masters"
+    ]
+  },
+  {
+    "id": 30,
+    "category": "tournament_winner",
+    "input": "Who won the 1996 Newport?",
+    "expected": "Nicolas Pereira",
+    "articles": [
+      "results__1996_Newport"
+    ]
+  },
+  {
+    "id": 31,
+    "category": "tournament_score",
+    "input": "What was the score of the 2002 Bucharest final?",
+    "expected": "David Ferrer beat Jose Acasuso 6-3 6-2",
+    "articles": [
+      "results__2002_Bucharest"
+    ]
+  },
+  {
+    "id": 32,
+    "category": "tournament_score",
+    "input": "What was the score of the 2003 Lyon final?",
+    "expected": "Rainer Schuettler beat Arnaud Clement 7-5 6-3",
+    "articles": [
+      "results__2003_Lyon"
+    ]
+  },
+  {
+    "id": 33,
+    "category": "tournament_score",
+    "input": "What was the score of the 1993 Coral Springs final?",
+    "expected": "Todd Martin beat David Wheaton 6-3 6-4",
+    "articles": [
+      "results__1993_Coral_Springs"
+    ]
+  },
+  {
+    "id": 34,
+    "category": "tournament_score",
+    "input": "What was the score of the 2018 Cabo San Lucas final?",
+    "expected": "Fabio Fognini beat Juan Martin del Potro 6-4 6-2",
+    "articles": [
+      "results__2018_Cabo_San_Lucas"
+    ]
+  },
+  {
+    "id": 35,
+    "category": "tournament_score",
+    "input": "What was the score of the 2024 Australian Open final?",
+    "expected": "Jannik Sinner beat Daniil Medvedev 3-6 3-6 6-4 6-4 6-3",
+    "articles": [
+      "results__2024_Australian_Open"
+    ]
+  },
+  {
+    "id": 36,
+    "category": "tournament_score",
+    "input": "What was the score of the 2008 Delray Beach final?",
+    "expected": "Kei Nishikori beat James Blake 3-6 6-1 6-4",
+    "articles": [
+      "results__2008_Delray_Beach"
+    ]
+  },
+  {
+    "id": 37,
+    "category": "tournament_score",
+    "input": "What was the score of the 1991 Basel final?",
+    "expected": "Jakob Hlasek beat John McEnroe 7-6(4) 6-0 6-3",
+    "articles": [
+      "results__1991_Basel"
+    ]
+  },
+  {
+    "id": 38,
+    "category": "tournament_score",
+    "input": "What was the score of the 2024 Chengdu final?",
+    "expected": "Juncheng Shang beat Lorenzo Musetti 7-6(4) 6-1",
+    "articles": [
+      "results__2024_Chengdu"
+    ]
+  },
+  {
+    "id": 39,
+    "category": "tournament_score",
+    "input": "What was the score of the 1995 Tel Aviv final?",
+    "expected": "Jan Kroslak beat Javier Sanchez 6-3 6-4",
+    "articles": [
+      "results__1995_Tel_Aviv"
+    ]
+  },
+  {
+    "id": 40,
+    "category": "tournament_score",
+    "input": "What was the score of the 2025 Hong Kong final?",
+    "expected": "Alexandre Muller beat Kei Nishikori 2-6 6-1 6-3",
+    "articles": [
+      "results__2025_Hong_Kong"
+    ]
+  },
+  {
+    "id": 41,
+    "category": "tournament_score",
+    "input": "What was the score of the 1998 Gstaad final?",
+    "expected": "Alex Corretja beat Boris Becker 7-6(5) 7-5 6-3",
+    "articles": [
+      "results__1998_Gstaad"
+    ]
+  },
+  {
+    "id": 42,
+    "category": "tournament_score",
+    "input": "What was the score of the 2011 World Team Championship final?",
+    "expected": "Juan Ignacio Chela beat Philipp Kohlschreiber 6-4 7-6(4)",
+    "articles": [
+      "results__2011_World_Team_Championship"
+    ]
+  },
+  {
+    "id": 43,
+    "category": "tournament_score",
+    "input": "What was the score of the 2001 Tokyo final?",
+    "expected": "Lleyton Hewitt beat Michel Kratochvil 6-4 6-2",
+    "articles": [
+      "results__2001_Tokyo"
+    ]
+  },
+  {
+    "id": 44,
+    "category": "tournament_score",
+    "input": "What was the score of the 2021 Montpellier final?",
+    "expected": "David Goffin beat Roberto Bautista Agut 5-7 6-4 6-2",
+    "articles": [
+      "results__2021_Montpellier"
+    ]
+  },
+  {
+    "id": 45,
+    "category": "tournament_score",
+    "input": "What was the score of the 2024 US Open final?",
+    "expected": "Jannik Sinner beat Taylor Fritz 6-3 6-4 7-5",
+    "articles": [
+      "results__2024_US_Open"
+    ]
+  },
+  {
+    "id": 46,
+    "category": "tournament_score",
+    "input": "What was the score of the 2008 Queen's Club final?",
+    "expected": "Rafael Nadal beat Novak Djokovic 7-6(6) 7-5",
+    "articles": [
+      "results__2008_Queens_Club"
+    ]
+  },
+  {
+    "id": 47,
+    "category": "tournament_score",
+    "input": "What was the score of the 2025 Santiago final?",
+    "expected": "Laslo Djere beat Sebastian Baez 6-4 3-6 7-5",
+    "articles": [
+      "results__2025_Santiago"
+    ]
+  },
+  {
+    "id": 48,
+    "category": "tournament_score",
+    "input": "What was the score of the 1993 Sydney Outdoor final?",
+    "expected": "Pete Sampras beat Thomas Muster 7-6(7) 6-1",
+    "articles": [
+      "results__1993_Sydney_Outdoor"
+    ]
+  },
+  {
+    "id": 49,
+    "category": "tournament_score",
+    "input": "What was the score of the 2005 World Team Championship final?",
+    "expected": "Guillermo Coria beat Florian Mayer 6-1 6-1",
+    "articles": [
+      "results__2005_World_Team_Championship"
+    ]
+  },
+  {
+    "id": 50,
+    "category": "tournament_score",
+    "input": "What was the score of the 1993 Beijing final?",
+    "expected": "Michael Chang beat Greg Rusedski 7-6(5) 6-7(6) 6-4",
+    "articles": [
+      "results__1993_Beijing"
+    ]
+  },
+  {
+    "id": 51,
+    "category": "tournament_score",
+    "input": "What was the score of the 2011 Canada Masters final?",
+    "expected": "Novak Djokovic beat Mardy Fish 6-2 3-6 6-4",
+    "articles": [
+      "results__2011_Canada_Masters"
+    ]
+  },
+  {
+    "id": 52,
+    "category": "tournament_score",
+    "input": "What was the score of the 2018 Montpellier final?",
+    "expected": "Lucas Pouille beat Richard Gasquet 7-6(2) 6-4",
+    "articles": [
+      "results__2018_Montpellier"
+    ]
+  },
+  {
+    "id": 53,
+    "category": "tournament_score",
+    "input": "What was the score of the 2008 Stuttgart final?",
+    "expected": "Juan Martin del Potro beat Richard Gasquet 6-4 7-5",
+    "articles": [
+      "results__2008_Stuttgart"
+    ]
+  },
+  {
+    "id": 54,
+    "category": "tournament_score",
+    "input": "What was the score of the 2009 Cincinnati Masters final?",
+    "expected": "Roger Federer beat Novak Djokovic 6-1 7-5",
+    "articles": [
+      "results__2009_Cincinnati_Masters"
+    ]
+  },
+  {
+    "id": 55,
+    "category": "tournament_score",
+    "input": "What was the score of the 2019 Montpellier final?",
+    "expected": "Jo-Wilfried Tsonga beat Pierre-Hugues Herbert 6-4 6-2",
+    "articles": [
+      "results__2019_Montpellier"
+    ]
+  },
+  {
+    "id": 56,
+    "category": "tournament_score",
+    "input": "What was the score of the 2000 Basel final?",
+    "expected": "Thomas Enqvist beat Roger Federer 6-2 4-6 7-6(4) 1-6 6-1",
+    "articles": [
+      "results__2000_Basel"
+    ]
+  },
+  {
+    "id": 57,
+    "category": "tournament_score",
+    "input": "What was the score of the 1993 Rotterdam final?",
+    "expected": "Anders Jarryd beat Karel Novacek 6-3 7-5",
+    "articles": [
+      "results__1993_Rotterdam"
+    ]
+  },
+  {
+    "id": 58,
+    "category": "tournament_score",
+    "input": "What was the score of the 2008 Roland Garros final?",
+    "expected": "Rafael Nadal beat Roger Federer 6-1 6-3 6-0",
+    "articles": [
+      "results__2008_Roland_Garros"
+    ]
+  },
+  {
+    "id": 59,
+    "category": "tournament_score",
+    "input": "What was the score of the 2003 St. Poelten final?",
+    "expected": "Andy Roddick beat Nikolay Davydenko 6-3 6-2",
+    "articles": [
+      "results__2003_St_Poelten"
+    ]
+  },
+  {
+    "id": 60,
+    "category": "tournament_score",
+    "input": "What was the score of the 2014 Roland Garros final?",
+    "expected": "Rafael Nadal beat Novak Djokovic 3-6 7-5 6-2 6-4",
+    "articles": [
+      "results__2014_Roland_Garros"
+    ]
+  },
+  {
+    "id": 61,
+    "category": "head_to_head",
+    "input": "What is the head-to-head record between Marcos Baghdatis and Philipp Kohlschreiber?",
+    "expected": "Marcos Baghdatis leads 5-3",
+    "articles": [
+      "h2h__Marcos_Baghdatis_vs_Philipp_Kohlschreiber"
+    ]
+  },
+  {
+    "id": 62,
+    "category": "head_to_head",
+    "input": "What is the head-to-head record between Andre Agassi and Patrick Rafter?",
+    "expected": "Andre Agassi leads 10-5",
+    "articles": [
+      "h2h__Andre_Agassi_vs_Patrick_Rafter"
+    ]
+  },
+  {
+    "id": 63,
+    "category": "head_to_head",
+    "input": "What is the head-to-head record between Jarkko Nieminen and Rainer Schuettler?",
+    "expected": "Jarkko Nieminen leads 5-4",
+    "articles": [
+      "h2h__Jarkko_Nieminen_vs_Rainer_Schuettler"
+    ]
+  },
+  {
+    "id": 64,
+    "category": "head_to_head",
+    "input": "What is the head-to-head record between Feliciano Lopez and Juan Monaco?",
+    "expected": "Feliciano Lopez leads 5-3",
+    "articles": [
+      "h2h__Feliciano_Lopez_vs_Juan_Monaco"
+    ]
+  },
+  {
+    "id": 65,
+    "category": "head_to_head",
+    "input": "What is the head-to-head record between Greg Rusedski and Jonas Bjorkman?",
+    "expected": "Jonas Bjorkman leads 7-5",
+    "articles": [
+      "h2h__Greg_Rusedski_vs_Jonas_Bjorkman"
+    ]
+  },
+  {
+    "id": 66,
+    "category": "head_to_head",
+    "input": "What is the head-to-head record between Albert Montanes and Victor Hanescu?",
+    "expected": "Victor Hanescu leads 5-4",
+    "articles": [
+      "h2h__Albert_Montanes_vs_Victor_Hanescu"
+    ]
+  },
+  {
+    "id": 67,
+    "category": "head_to_head",
+    "input": "What is the head-to-head record between Andre Agassi and Lleyton Hewitt?",
+    "expected": "Andre Agassi leads 4-4",
+    "articles": [
+      "h2h__Andre_Agassi_vs_Lleyton_Hewitt"
+    ]
+  },
+  {
+    "id": 68,
+    "category": "head_to_head",
+    "input": "What is the head-to-head record between Marcelo Rios and Petr Korda?",
+    "expected": "Marcelo Rios leads 4-4",
+    "articles": [
+      "h2h__Marcelo_Rios_vs_Petr_Korda"
+    ]
+  },
+  {
+    "id": 69,
+    "category": "head_to_head",
+    "input": "What is the head-to-head record between Nikolay Davydenko and Novak Djokovic?",
+    "expected": "Novak Djokovic leads 6-2",
+    "articles": [
+      "h2h__Nikolay_Davydenko_vs_Novak_Djokovic"
+    ]
+  },
+  {
+    "id": 70,
+    "category": "head_to_head",
+    "input": "What is the head-to-head record between Julien Benneteau and Jurgen Melzer?",
+    "expected": "Julien Benneteau leads 6-2",
+    "articles": [
+      "h2h__Julien_Benneteau_vs_Jurgen_Melzer"
+    ]
+  },
+  {
+    "id": 71,
+    "category": "head_to_head",
+    "input": "What is the head-to-head record between David Nalbandian and Marat Safin?",
+    "expected": "Marat Safin leads 6-3",
+    "articles": [
+      "h2h__David_Nalbandian_vs_Marat_Safin"
+    ]
+  },
+  {
+    "id": 72,
+    "category": "head_to_head",
+    "input": "What is the head-to-head record between Adrian Mannarino and Alexander Zverev?",
+    "expected": "Alexander Zverev leads 9-0",
+    "articles": [
+      "h2h__Adrian_Mannarino_vs_Alexander_Zverev"
+    ]
+  },
+  {
+    "id": 73,
+    "category": "head_to_head",
+    "input": "What is the head-to-head record between Carlos Alcaraz and Novak Djokovic?",
+    "expected": "Novak Djokovic leads 5-4",
+    "articles": [
+      "h2h__Carlos_Alcaraz_vs_Novak_Djokovic"
+    ]
+  },
+  {
+    "id": 74,
+    "category": "head_to_head",
+    "input": "What is the head-to-head record between Jo-Wilfried Tsonga and Sam Querrey?",
+    "expected": "Jo-Wilfried Tsonga leads 4-4",
+    "articles": [
+      "h2h__Jo-Wilfried_Tsonga_vs_Sam_Querrey"
+    ]
+  },
+  {
+    "id": 75,
+    "category": "head_to_head",
+    "input": "What is the head-to-head record between Arnaud Clement and Lleyton Hewitt?",
+    "expected": "Lleyton Hewitt leads 7-1",
+    "articles": [
+      "h2h__Arnaud_Clement_vs_Lleyton_Hewitt"
+    ]
+  },
+  {
+    "id": 76,
+    "category": "head_to_head",
+    "input": "What is the head-to-head record between Mariano Zabaleta and Tim Henman?",
+    "expected": "Mariano Zabaleta leads 5-4",
+    "articles": [
+      "h2h__Mariano_Zabaleta_vs_Tim_Henman"
+    ]
+  },
+  {
+    "id": 77,
+    "category": "head_to_head",
+    "input": "What is the head-to-head record between Carlos Moya and Juan Carlos Ferrero?",
+    "expected": "Juan Carlos Ferrero leads 8-6",
+    "articles": [
+      "h2h__Carlos_Moya_vs_Juan_Carlos_Ferrero"
+    ]
+  },
+  {
+    "id": 78,
+    "category": "head_to_head",
+    "input": "What is the head-to-head record between Lleyton Hewitt and Thomas Enqvist?",
+    "expected": "Lleyton Hewitt leads 6-1",
+    "articles": [
+      "h2h__Lleyton_Hewitt_vs_Thomas_Enqvist"
+    ]
+  },
+  {
+    "id": 79,
+    "category": "head_to_head",
+    "input": "What is the head-to-head record between Karol Kucera and Tim Henman?",
+    "expected": "Karol Kucera leads 6-5",
+    "articles": [
+      "h2h__Karol_Kucera_vs_Tim_Henman"
+    ]
+  },
+  {
+    "id": 80,
+    "category": "head_to_head",
+    "input": "What is the head-to-head record between Greg Rusedski and Marc Rosset?",
+    "expected": "Greg Rusedski leads 5-3",
+    "articles": [
+      "h2h__Greg_Rusedski_vs_Marc_Rosset"
+    ]
+  },
+  {
+    "id": 81,
+    "category": "head_to_head",
+    "input": "What is the head-to-head record between Arnaud Boetsch and Stefan Edberg?",
+    "expected": "Stefan Edberg leads 9-1",
+    "articles": [
+      "h2h__Arnaud_Boetsch_vs_Stefan_Edberg"
+    ]
+  },
+  {
+    "id": 82,
+    "category": "head_to_head",
+    "input": "What is the head-to-head record between Dominic Thiem and Pablo Carreno Busta?",
+    "expected": "Dominic Thiem leads 7-1",
+    "articles": [
+      "h2h__Dominic_Thiem_vs_Pablo_Carreno_Busta"
+    ]
+  },
+  {
+    "id": 83,
+    "category": "head_to_head",
+    "input": "What is the head-to-head record between Philipp Kohlschreiber and Tomas Berdych?",
+    "expected": "Tomas Berdych leads 9-2",
+    "articles": [
+      "h2h__Philipp_Kohlschreiber_vs_Tomas_Berdych"
+    ]
+  },
+  {
+    "id": 84,
+    "category": "head_to_head",
+    "input": "What is the head-to-head record between Andrei Medvedev and Goran Ivanisevic?",
+    "expected": "Goran Ivanisevic leads 5-3",
+    "articles": [
+      "h2h__Andrei_Medvedev_vs_Goran_Ivanisevic"
+    ]
+  },
+  {
+    "id": 85,
+    "category": "head_to_head",
+    "input": "What is the head-to-head record between Novak Djokovic and Stefanos Tsitsipas?",
+    "expected": "Novak Djokovic leads 12-2",
+    "articles": [
+      "h2h__Novak_Djokovic_vs_Stefanos_Tsitsipas"
+    ]
+  },
+  {
+    "id": 86,
+    "category": "head_to_head",
+    "input": "What is the head-to-head record between Casper Ruud and Francisco Cerundolo?",
+    "expected": "Francisco Cerundolo leads 5-4",
+    "articles": [
+      "h2h__Casper_Ruud_vs_Francisco_Cerundolo"
+    ]
+  },
+  {
+    "id": 87,
+    "category": "head_to_head",
+    "input": "What is the head-to-head record between David Nalbandian and Fernando Gonzalez?",
+    "expected": "David Nalbandian leads 5-3",
+    "articles": [
+      "h2h__David_Nalbandian_vs_Fernando_Gonzalez"
+    ]
+  },
+  {
+    "id": 88,
+    "category": "head_to_head",
+    "input": "What is the head-to-head record between Lleyton Hewitt and Yevgeny Kafelnikov?",
+    "expected": "Lleyton Hewitt leads 7-1",
+    "articles": [
+      "h2h__Lleyton_Hewitt_vs_Yevgeny_Kafelnikov"
+    ]
+  },
+  {
+    "id": 89,
+    "category": "head_to_head",
+    "input": "What is the head-to-head record between Andre Agassi and Roger Federer?",
+    "expected": "Roger Federer leads 8-3",
+    "articles": [
+      "h2h__Andre_Agassi_vs_Roger_Federer"
+    ]
+  },
+  {
+    "id": 90,
+    "category": "head_to_head",
+    "input": "What is the head-to-head record between Philipp Kohlschreiber and Roger Federer?",
+    "expected": "Roger Federer leads 14-0",
+    "articles": [
+      "h2h__Philipp_Kohlschreiber_vs_Roger_Federer"
+    ]
+  },
+  {
+    "id": 91,
+    "category": "career_titles",
+    "input": "How many tour-level singles titles did Andrei Pavel win?",
+    "expected": "3 titles",
+    "articles": [
+      "career__Andrei_Pavel"
+    ]
+  },
+  {
+    "id": 92,
+    "category": "career_titles",
+    "input": "How many tour-level singles titles did Nuno Borges win?",
+    "expected": "1 titles",
+    "articles": [
+      "career__Nuno_Borges"
+    ]
+  },
+  {
+    "id": 93,
+    "category": "career_titles",
+    "input": "How many tour-level singles titles did Juan Martin del Potro win?",
+    "expected": "22 titles",
+    "articles": [
+      "career__Juan_Martin_del_Potro"
+    ]
+  },
+  {
+    "id": 94,
+    "category": "career_titles",
+    "input": "How many tour-level singles titles did Facundo Diaz Acosta win?",
+    "expected": "1 titles",
+    "articles": [
+      "career__Facundo_Diaz_Acosta"
+    ]
+  },
+  {
+    "id": 95,
+    "category": "career_titles",
+    "input": "How many tour-level singles titles did Roberto Carballes Baena win?",
+    "expected": "2 titles",
+    "articles": [
+      "career__Roberto_Carballes_Baena"
+    ]
+  },
+  {
+    "id": 96,
+    "category": "career_titles",
+    "input": "How many tour-level singles titles did Juan Monaco win?",
+    "expected": "10 titles",
+    "articles": [
+      "career__Juan_Monaco"
+    ]
+  },
+  {
+    "id": 97,
+    "category": "career_titles",
+    "input": "How many tour-level singles titles did Thomas Enqvist win?",
+    "expected": "19 titles",
+    "articles": [
+      "career__Thomas_Enqvist"
+    ]
+  },
+  {
+    "id": 98,
+    "category": "career_titles",
+    "input": "How many tour-level singles titles did Slava Dosedel win?",
+    "expected": "3 titles",
+    "articles": [
+      "career__Slava_Dosedel"
+    ]
+  },
+  {
+    "id": 99,
+    "category": "career_titles",
+    "input": "How many tour-level singles titles did Paolo Cane win?",
+    "expected": "1 titles",
+    "articles": [
+      "career__Paolo_Cane"
+    ]
+  },
+  {
+    "id": 100,
+    "category": "career_titles",
+    "input": "How many tour-level singles titles did Jared Palmer win?",
+    "expected": "1 titles",
+    "articles": [
+      "career__Jared_Palmer"
+    ]
+  },
+  {
+    "id": 101,
+    "category": "career_titles",
+    "input": "How many tour-level singles titles did Tomas Carbonell win?",
+    "expected": "2 titles",
+    "articles": [
+      "career__Tomas_Carbonell"
+    ]
+  },
+  {
+    "id": 102,
+    "category": "career_titles",
+    "input": "How many tour-level singles titles did Wayne Arthurs win?",
+    "expected": "1 titles",
+    "articles": [
+      "career__Wayne_Arthurs"
+    ]
+  },
+  {
+    "id": 103,
+    "category": "career_titles",
+    "input": "How many tour-level singles titles did Mischa Zverev win?",
+    "expected": "1 titles",
+    "articles": [
+      "career__Mischa_Zverev"
+    ]
+  },
+  {
+    "id": 104,
+    "category": "career_titles",
+    "input": "How many tour-level singles titles did Fernando Meligeni win?",
+    "expected": "3 titles",
+    "articles": [
+      "career__Fernando_Meligeni"
+    ]
+  },
+  {
+    "id": 105,
+    "category": "career_titles",
+    "input": "How many tour-level singles titles did John McEnroe win?",
+    "expected": "2 titles",
+    "articles": [
+      "career__John_McEnroe"
+    ]
+  },
+  {
+    "id": 106,
+    "category": "career_titles",
+    "input": "How many tour-level singles titles did Tommy Robredo win?",
+    "expected": "12 titles",
+    "articles": [
+      "career__Tommy_Robredo"
+    ]
+  },
+  {
+    "id": 107,
+    "category": "career_titles",
+    "input": "How many tour-level singles titles did Jordan Thompson win?",
+    "expected": "1 titles",
+    "articles": [
+      "career__Jordan_Thompson"
+    ]
+  },
+  {
+    "id": 108,
+    "category": "career_titles",
+    "input": "How many tour-level singles titles did Marcelo Filippini win?",
+    "expected": "3 titles",
+    "articles": [
+      "career__Marcelo_Filippini"
+    ]
+  },
+  {
+    "id": 109,
+    "category": "career_titles",
+    "input": "How many tour-level singles titles did Gilles Simon win?",
+    "expected": "14 titles",
+    "articles": [
+      "career__Gilles_Simon"
+    ]
+  },
+  {
+    "id": 110,
+    "category": "career_titles",
+    "input": "How many tour-level singles titles did Dominik Hrbaty win?",
+    "expected": "6 titles",
+    "articles": [
+      "career__Dominik_Hrbaty"
+    ]
+  },
+  {
+    "id": 111,
+    "category": "career_titles",
+    "input": "How many tour-level singles titles did Stan Wawrinka win?",
+    "expected": "16 titles",
+    "articles": [
+      "career__Stan_Wawrinka"
+    ]
+  },
+  {
+    "id": 112,
+    "category": "career_titles",
+    "input": "How many tour-level singles titles did Kevin Anderson win?",
+    "expected": "7 titles",
+    "articles": [
+      "career__Kevin_Anderson"
+    ]
+  },
+  {
+    "id": 113,
+    "category": "career_titles",
+    "input": "How many tour-level singles titles did Novak Djokovic win?",
+    "expected": "100 titles",
+    "articles": [
+      "career__Novak_Djokovic"
+    ]
+  },
+  {
+    "id": 114,
+    "category": "career_titles",
+    "input": "How many tour-level singles titles did Viktor Troicki win?",
+    "expected": "5 titles",
+    "articles": [
+      "career__Viktor_Troicki"
+    ]
+  },
+  {
+    "id": 115,
+    "category": "career_titles",
+    "input": "How many tour-level singles titles did Henri Leconte win?",
+    "expected": "1 titles",
+    "articles": [
+      "career__Henri_Leconte"
+    ]
+  },
+  {
+    "id": 116,
+    "category": "career_titles",
+    "input": "How many tour-level singles titles did Scott Davis win?",
+    "expected": "1 titles",
+    "articles": [
+      "career__Scott_Davis"
+    ]
+  },
+  {
+    "id": 117,
+    "category": "career_titles",
+    "input": "How many tour-level singles titles did Tomas Berdych win?",
+    "expected": "14 titles",
+    "articles": [
+      "career__Tomas_Berdych"
+    ]
+  },
+  {
+    "id": 118,
+    "category": "career_titles",
+    "input": "How many tour-level singles titles did Horacio de la Pena win?",
+    "expected": "2 titles",
+    "articles": [
+      "career__Horacio_de_la_Pena"
+    ]
+  },
+  {
+    "id": 119,
+    "category": "career_titles",
+    "input": "How many tour-level singles titles did Kenneth Carlsen win?",
+    "expected": "3 titles",
+    "articles": [
+      "career__Kenneth_Carlsen"
+    ]
+  },
+  {
+    "id": 120,
+    "category": "career_titles",
+    "input": "How many tour-level singles titles did David Wheaton win?",
+    "expected": "3 titles",
+    "articles": [
+      "career__David_Wheaton"
+    ]
+  },
+  {
+    "id": 121,
+    "category": "career_rank",
+    "input": "What was the best ATP singles ranking reached by Gilles Muller since 1990?",
+    "expected": "world number 21 (within 1990 onwards)",
+    "articles": [
+      "career__Gilles_Muller"
+    ]
+  },
+  {
+    "id": 122,
+    "category": "career_rank",
+    "input": "What was the best ATP singles ranking reached by Stan Wawrinka since 1990?",
+    "expected": "world number 3 (within 1990 onwards)",
+    "articles": [
+      "career__Stan_Wawrinka"
+    ]
+  },
+  {
+    "id": 123,
+    "category": "career_rank",
+    "input": "What was the best ATP singles ranking reached by Agustin Calleri since 1990?",
+    "expected": "world number 16 (within 1990 onwards)",
+    "articles": [
+      "career__Agustin_Calleri"
+    ]
+  },
+  {
+    "id": 124,
+    "category": "career_rank",
+    "input": "What was the best ATP singles ranking reached by Constant Lestienne since 1990?",
+    "expected": "world number 48 (within 1990 onwards)",
+    "articles": [
+      "career__Constant_Lestienne"
+    ]
+  },
+  {
+    "id": 125,
+    "category": "career_rank",
+    "input": "What was the best ATP singles ranking reached by Scott Draper since 1990?",
+    "expected": "world number 42 (within 1990 onwards)",
+    "articles": [
+      "career__Scott_Draper"
+    ]
+  },
+  {
+    "id": 126,
+    "category": "career_rank",
+    "input": "What was the best ATP singles ranking reached by Simone Bolelli since 1990?",
+    "expected": "world number 36 (within 1990 onwards)",
+    "articles": [
+      "career__Simone_Bolelli"
+    ]
+  },
+  {
+    "id": 127,
+    "category": "career_rank",
+    "input": "What was the best ATP singles ranking reached by Sebastian Baez since 1990?",
+    "expected": "world number 18 (within 1990 onwards)",
+    "articles": [
+      "career__Sebastian_Baez"
+    ]
+  },
+  {
+    "id": 128,
+    "category": "career_rank",
+    "input": "What was the best ATP singles ranking reached by Ugo Humbert since 1990?",
+    "expected": "world number 13 (within 1990 onwards)",
+    "articles": [
+      "career__Ugo_Humbert"
+    ]
+  },
+  {
+    "id": 129,
+    "category": "career_rank",
+    "input": "What was the best ATP singles ranking reached by Kevin Anderson since 1990?",
+    "expected": "world number 5 (within 1990 onwards)",
+    "articles": [
+      "career__Kevin_Anderson"
+    ]
+  },
+  {
+    "id": 130,
+    "category": "career_rank",
+    "input": "What was the best ATP singles ranking reached by Andrei Olhovskiy since 1990?",
+    "expected": "world number 49 (within 1990 onwards)",
+    "articles": [
+      "career__Andrei_Olhovskiy"
+    ]
+  },
+  {
+    "id": 131,
+    "category": "career_rank",
+    "input": "What was the best ATP singles ranking reached by Radek Stepanek since 1990?",
+    "expected": "world number 11 (within 1990 onwards)",
+    "articles": [
+      "career__Radek_Stepanek"
+    ]
+  },
+  {
+    "id": 132,
+    "category": "career_rank",
+    "input": "What was the best ATP singles ranking reached by Dominik Hrbaty since 1990?",
+    "expected": "world number 12 (within 1990 onwards)",
+    "articles": [
+      "career__Dominik_Hrbaty"
+    ]
+  },
+  {
+    "id": 133,
+    "category": "career_rank",
+    "input": "What was the best ATP singles ranking reached by Carlos Costa since 1990?",
+    "expected": "world number 10 (within 1990 onwards)",
+    "articles": [
+      "career__Carlos_Costa"
+    ]
+  },
+  {
+    "id": 134,
+    "category": "career_rank",
+    "input": "What was the best ATP singles ranking reached by Jonas Svensson since 1990?",
+    "expected": "world number 10 (within 1990 onwards)",
+    "articles": [
+      "career__Jonas_Svensson"
+    ]
+  },
+  {
+    "id": 135,
+    "category": "career_rank",
+    "input": "What was the best ATP singles ranking reached by Alex O'Brien since 1990?",
+    "expected": "world number 30 (within 1990 onwards)",
+    "articles": [
+      "career__Alex_OBrien"
+    ]
+  },
+  {
+    "id": 136,
+    "category": "career_rank",
+    "input": "What was the best ATP singles ranking reached by Albert Montanes since 1990?",
+    "expected": "world number 22 (within 1990 onwards)",
+    "articles": [
+      "career__Albert_Montanes"
+    ]
+  },
+  {
+    "id": 137,
+    "category": "career_rank",
+    "input": "What was the best ATP singles ranking reached by Sam Querrey since 1990?",
+    "expected": "world number 11 (within 1990 onwards)",
+    "articles": [
+      "career__Sam_Querrey"
+    ]
+  },
+  {
+    "id": 138,
+    "category": "career_rank",
+    "input": "What was the best ATP singles ranking reached by Jenson Brooksby since 1990?",
+    "expected": "world number 33 (within 1990 onwards)",
+    "articles": [
+      "career__Jenson_Brooksby"
+    ]
+  },
+  {
+    "id": 139,
+    "category": "career_rank",
+    "input": "What was the best ATP singles ranking reached by Carl-Uwe Steeb since 1990?",
+    "expected": "world number 14 (within 1990 onwards)",
+    "articles": [
+      "career__Carl-Uwe_Steeb"
+    ]
+  },
+  {
+    "id": 140,
+    "category": "career_rank",
+    "input": "What was the best ATP singles ranking reached by Fabrice Santoro since 1990?",
+    "expected": "world number 17 (within 1990 onwards)",
+    "articles": [
+      "career__Fabrice_Santoro"
+    ]
+  },
+  {
+    "id": 141,
+    "category": "career_rank",
+    "input": "What was the best ATP singles ranking reached by Michael Berrer since 1990?",
+    "expected": "world number 42 (within 1990 onwards)",
+    "articles": [
+      "career__Michael_Berrer"
+    ]
+  },
+  {
+    "id": 142,
+    "category": "career_rank",
+    "input": "What was the best ATP singles ranking reached by Nikoloz Basilashvili since 1990?",
+    "expected": "world number 16 (within 1990 onwards)",
+    "articles": [
+      "career__Nikoloz_Basilashvili"
+    ]
+  },
+  {
+    "id": 143,
+    "category": "career_rank",
+    "input": "What was the best ATP singles ranking reached by Zizou Bergs since 1990?",
+    "expected": "world number 39 (within 1990 onwards)",
+    "articles": [
+      "career__Zizou_Bergs"
+    ]
+  },
+  {
+    "id": 144,
+    "category": "career_rank",
+    "input": "What was the best ATP singles ranking reached by Stephane Simian since 1990?",
+    "expected": "world number 43 (within 1990 onwards)",
+    "articles": [
+      "career__Stephane_Simian"
+    ]
+  },
+  {
+    "id": 145,
+    "category": "career_rank",
+    "input": "What was the best ATP singles ranking reached by Jordan Thompson since 1990?",
+    "expected": "world number 26 (within 1990 onwards)",
+    "articles": [
+      "career__Jordan_Thompson"
+    ]
+  },
+  {
+    "id": 146,
+    "category": "career_rank",
+    "input": "What was the best ATP singles ranking reached by Marc Rosset since 1990?",
+    "expected": "world number 9 (within 1990 onwards)",
+    "articles": [
+      "career__Marc_Rosset"
+    ]
+  },
+  {
+    "id": 147,
+    "category": "career_rank",
+    "input": "What was the best ATP singles ranking reached by Karel Novacek since 1990?",
+    "expected": "world number 8 (within 1990 onwards)",
+    "articles": [
+      "career__Karel_Novacek"
+    ]
+  },
+  {
+    "id": 148,
+    "category": "career_rank",
+    "input": "What was the best ATP singles ranking reached by Karol Kucera since 1990?",
+    "expected": "world number 6 (within 1990 onwards)",
+    "articles": [
+      "career__Karol_Kucera"
+    ]
+  },
+  {
+    "id": 149,
+    "category": "career_rank",
+    "input": "What was the best ATP singles ranking reached by Mats Wilander since 1990?",
+    "expected": "world number 10 (within 1990 onwards)",
+    "articles": [
+      "career__Mats_Wilander"
+    ]
+  },
+  {
+    "id": 150,
+    "category": "career_rank",
+    "input": "What was the best ATP singles ranking reached by Tomas Martin Etcheverry since 1990?",
+    "expected": "world number 27 (within 1990 onwards)",
+    "articles": [
+      "career__Tomas_Martin_Etcheverry"
+    ]
+  }
+]

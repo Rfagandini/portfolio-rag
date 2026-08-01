@@ -29,9 +29,6 @@ Usage:
 import re
 from collections import defaultdict
 
-from langchain_classic.retrievers import EnsembleRetriever
-import pickle
-
 from rag_chain import get_vector_store, build_reranking_retriever
 from test_questions import test_questions
 
@@ -111,16 +108,16 @@ def recall_at_k(ranked_articles: list[str], expected: set[str], k: int) -> float
 
 #DRIVER
 
-def build_eval_retriever(k: int = 10) -> EnsembleRetriever:
+def build_eval_retriever(k: int = 10):
     """
     Build the same hybrid retriever used in production, but with a larger
     k so we can compute metrics at multiple cutoffs (1, 3, 5, 10).
+
+    Hybrid fusion is now done by Qdrant itself (see rag_chain.get_vector_store),
+    so this is a plain retriever rather than an EnsembleRetriever over a dense
+    retriever and a pickled BM25 index.
     """
-    dense = get_vector_store().as_retriever(search_kwargs={"k": k})
-    with open("bm25_index.pkl", "rb") as f:
-        bm25 = pickle.load(f)
-    bm25.k = k
-    return EnsembleRetriever(retrievers=[dense, bm25], weights=[0.5, 0.5])
+    return get_vector_store().as_retriever(search_kwargs={"k": k})
 
 
 def evaluate(retriever, k_values: list[int] = [1, 3, 5, 10]) -> dict:
